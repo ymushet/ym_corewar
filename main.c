@@ -92,11 +92,11 @@ int ft_core_file_validation(int fd, t_player **player)
 	return (0);
 }
 
+/*
+ * Чтение и проверка всего .cor файла. Запись данных об игроке в t_player.
+ */
 t_player *ft_read_from_core(int fd, unsigned int n)
 {
-	/*
-	 * Чтение и проверка всего .cor файла. Запись данных об игроке в t_player.
-	 */
 	t_player	*player;
 	
 	player = ft_malloc_player(n);
@@ -113,7 +113,6 @@ t_player *ft_read_from_core(int fd, unsigned int n)
 /*
  * Тестовый мейн для компиляции кусков кода.
  */
-
 int main(int argc, char **argv)
 {
 	if (argc == 0)
@@ -123,9 +122,19 @@ int main(int argc, char **argv)
 	printf("%s\n", argv[1]);
 	int fd = open(argv[1], O_RDONLY);
 	p = ft_read_from_core(fd, 1);
-	ft_create_map(p, 1);
-	c = ft_create_proceses(p);
-	printf("%d\n", c->number);
 	close(fd);
+	int dd = open(argv[1], O_RDONLY);
+	p->next = ft_read_from_core(dd, 2);
+	close(dd);
+	char **map = ft_create_map(p, 2);
+//	int k = 0;
+//	while (k < MEM_SIZE)
+//	{
+//		printf("%.2X ", map[0][k]);
+//		k++;
+//		if (k % 32 == 0)
+//			printf("\n");
+//	}
+	//c = ft_create_proceses(p);
 	return (0);
 }
