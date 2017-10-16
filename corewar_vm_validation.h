@@ -7,6 +7,7 @@
 # include "./libft/libft.h"
 # include "./libft/libftprintf.h"
 # include "op.h"
+# include "./visualization/visualization.h"
 # define HEX 16
 
 typedef struct                  s_process

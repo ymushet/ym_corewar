@@ -4,14 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/core2.c" "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/core2.c.o"
-  "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/error.c" "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/error.c.o"
-  "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/ft_atoi_base.c" "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o"
-  "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/main.c" "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/main.c.o"
-  "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/map.c" "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/map.c.o"
-  "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/process.c" "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/process.c.o"
-  "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/read_core.c" "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/read_core.c.o"
-  "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/read_core2.c" "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/read_core2.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/core2.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/core2.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/error.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/error.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/ft_atoi_base.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/main.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/main.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/map.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/map.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/process.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/process.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/read_core.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/read_core.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/read_core2.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/read_core2.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/visualization/set_color.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o"
+  "/nfs/2016/m/mkaliber/Documents/ym_corewar/visualization/visualization.c" "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation
+CMAKE_SOURCE_DIR = /nfs/2016/m/mkaliber/Documents/ym_corewar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug
+CMAKE_BINARY_DIR = /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -339,6 +339,60 @@ read_core2.c.s:
 	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/read_core2.c.s
 .PHONY : read_core2.c.s
 
+visualization/set_color.o: visualization/set_color.c.o
+
+.PHONY : visualization/set_color.o
+
+# target to build an object file
+visualization/set_color.c.o:
+	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o
+.PHONY : visualization/set_color.c.o
+
+visualization/set_color.i: visualization/set_color.c.i
+
+.PHONY : visualization/set_color.i
+
+# target to preprocess a source file
+visualization/set_color.c.i:
+	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.i
+.PHONY : visualization/set_color.c.i
+
+visualization/set_color.s: visualization/set_color.c.s
+
+.PHONY : visualization/set_color.s
+
+# target to generate assembly for a file
+visualization/set_color.c.s:
+	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.s
+.PHONY : visualization/set_color.c.s
+
+visualization/visualization.o: visualization/visualization.c.o
+
+.PHONY : visualization/visualization.o
+
+# target to build an object file
+visualization/visualization.c.o:
+	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o
+.PHONY : visualization/visualization.c.o
+
+visualization/visualization.i: visualization/visualization.c.i
+
+.PHONY : visualization/visualization.i
+
+# target to preprocess a source file
+visualization/visualization.c.i:
+	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.i
+.PHONY : visualization/visualization.c.i
+
+visualization/visualization.s: visualization/visualization.c.s
+
+.PHONY : visualization/visualization.s
+
+# target to generate assembly for a file
+visualization/visualization.c.s:
+	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.s
+.PHONY : visualization/visualization.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -372,6 +426,12 @@ help:
 	@echo "... read_core2.o"
 	@echo "... read_core2.i"
 	@echo "... read_core2.s"
+	@echo "... visualization/set_color.o"
+	@echo "... visualization/set_color.i"
+	@echo "... visualization/set_color.s"
+	@echo "... visualization/visualization.o"
+	@echo "... visualization/visualization.i"
+	@echo "... visualization/visualization.s"
 .PHONY : help
 
 

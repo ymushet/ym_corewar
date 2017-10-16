@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation
+CMAKE_SOURCE_DIR = /nfs/2016/m/mkaliber/Documents/ym_corewar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug
+CMAKE_BINARY_DIR = /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/corewar_vm_validation.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/corewar_vm_validation.dir/flags.make
 
 CMakeFiles/corewar_vm_validation.dir/read_core.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
 CMakeFiles/corewar_vm_validation.dir/read_core.c.o: ../read_core.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/corewar_vm_validation.dir/read_core.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/read_core.c.o   -c /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/read_core.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/corewar_vm_validation.dir/read_core.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/read_core.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/read_core.c
 
 CMakeFiles/corewar_vm_validation.dir/read_core.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/read_core.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/read_core.c > CMakeFiles/corewar_vm_validation.dir/read_core.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/read_core.c > CMakeFiles/corewar_vm_validation.dir/read_core.c.i
 
 CMakeFiles/corewar_vm_validation.dir/read_core.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/read_core.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/read_core.c -o CMakeFiles/corewar_vm_validation.dir/read_core.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/read_core.c -o CMakeFiles/corewar_vm_validation.dir/read_core.c.s
 
 CMakeFiles/corewar_vm_validation.dir/read_core.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/corewar_vm_validation.dir/read_core.c.o.provides.build: CMakeFiles/co
 
 CMakeFiles/corewar_vm_validation.dir/main.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
 CMakeFiles/corewar_vm_validation.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/corewar_vm_validation.dir/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/main.c.o   -c /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/corewar_vm_validation.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/main.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/main.c
 
 CMakeFiles/corewar_vm_validation.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/main.c > CMakeFiles/corewar_vm_validation.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/main.c > CMakeFiles/corewar_vm_validation.dir/main.c.i
 
 CMakeFiles/corewar_vm_validation.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/main.c -o CMakeFiles/corewar_vm_validation.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/main.c -o CMakeFiles/corewar_vm_validation.dir/main.c.s
 
 CMakeFiles/corewar_vm_validation.dir/main.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/corewar_vm_validation.dir/main.c.o.provides.build: CMakeFiles/corewar
 
 CMakeFiles/corewar_vm_validation.dir/process.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
 CMakeFiles/corewar_vm_validation.dir/process.c.o: ../process.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/corewar_vm_validation.dir/process.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/process.c.o   -c /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/process.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/corewar_vm_validation.dir/process.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/process.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/process.c
 
 CMakeFiles/corewar_vm_validation.dir/process.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/process.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/process.c > CMakeFiles/corewar_vm_validation.dir/process.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/process.c > CMakeFiles/corewar_vm_validation.dir/process.c.i
 
 CMakeFiles/corewar_vm_validation.dir/process.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/process.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/process.c -o CMakeFiles/corewar_vm_validation.dir/process.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/process.c -o CMakeFiles/corewar_vm_validation.dir/process.c.s
 
 CMakeFiles/corewar_vm_validation.dir/process.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/corewar_vm_validation.dir/process.c.o.provides.build: CMakeFiles/core
 
 CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
 CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o: ../ft_atoi_base.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o   -c /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/ft_atoi_base.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/ft_atoi_base.c
 
 CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/ft_atoi_base.c > CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/ft_atoi_base.c > CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.i
 
 CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/ft_atoi_base.c -o CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/ft_atoi_base.c -o CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.s
 
 CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/corewar_vm_validation.dir/ft_atoi_base.c.o.provides.build: CMakeFiles
 
 CMakeFiles/corewar_vm_validation.dir/map.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
 CMakeFiles/corewar_vm_validation.dir/map.c.o: ../map.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/corewar_vm_validation.dir/map.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/map.c.o   -c /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/corewar_vm_validation.dir/map.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/map.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/map.c
 
 CMakeFiles/corewar_vm_validation.dir/map.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/map.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/map.c > CMakeFiles/corewar_vm_validation.dir/map.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/map.c > CMakeFiles/corewar_vm_validation.dir/map.c.i
 
 CMakeFiles/corewar_vm_validation.dir/map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/map.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/map.c -o CMakeFiles/corewar_vm_validation.dir/map.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/map.c -o CMakeFiles/corewar_vm_validation.dir/map.c.s
 
 CMakeFiles/corewar_vm_validation.dir/map.c.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/corewar_vm_validation.dir/map.c.o.provides.build: CMakeFiles/corewar_
 
 CMakeFiles/corewar_vm_validation.dir/error.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
 CMakeFiles/corewar_vm_validation.dir/error.c.o: ../error.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/corewar_vm_validation.dir/error.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/error.c.o   -c /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/error.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/corewar_vm_validation.dir/error.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/error.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/error.c
 
 CMakeFiles/corewar_vm_validation.dir/error.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/error.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/error.c > CMakeFiles/corewar_vm_validation.dir/error.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/error.c > CMakeFiles/corewar_vm_validation.dir/error.c.i
 
 CMakeFiles/corewar_vm_validation.dir/error.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/error.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/error.c -o CMakeFiles/corewar_vm_validation.dir/error.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/error.c -o CMakeFiles/corewar_vm_validation.dir/error.c.s
 
 CMakeFiles/corewar_vm_validation.dir/error.c.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/corewar_vm_validation.dir/error.c.o.provides.build: CMakeFiles/corewa
 
 CMakeFiles/corewar_vm_validation.dir/core2.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
 CMakeFiles/corewar_vm_validation.dir/core2.c.o: ../core2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/corewar_vm_validation.dir/core2.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/core2.c.o   -c /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/core2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/corewar_vm_validation.dir/core2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/core2.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/core2.c
 
 CMakeFiles/corewar_vm_validation.dir/core2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/core2.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/core2.c > CMakeFiles/corewar_vm_validation.dir/core2.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/core2.c > CMakeFiles/corewar_vm_validation.dir/core2.c.i
 
 CMakeFiles/corewar_vm_validation.dir/core2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/core2.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/core2.c -o CMakeFiles/corewar_vm_validation.dir/core2.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/core2.c -o CMakeFiles/corewar_vm_validation.dir/core2.c.s
 
 CMakeFiles/corewar_vm_validation.dir/core2.c.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/corewar_vm_validation.dir/core2.c.o.provides.build: CMakeFiles/corewa
 
 CMakeFiles/corewar_vm_validation.dir/read_core2.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
 CMakeFiles/corewar_vm_validation.dir/read_core2.c.o: ../read_core2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/corewar_vm_validation.dir/read_core2.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/read_core2.c.o   -c /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/read_core2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/corewar_vm_validation.dir/read_core2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/read_core2.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/read_core2.c
 
 CMakeFiles/corewar_vm_validation.dir/read_core2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/read_core2.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/read_core2.c > CMakeFiles/corewar_vm_validation.dir/read_core2.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/read_core2.c > CMakeFiles/corewar_vm_validation.dir/read_core2.c.i
 
 CMakeFiles/corewar_vm_validation.dir/read_core2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/read_core2.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/read_core2.c -o CMakeFiles/corewar_vm_validation.dir/read_core2.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/read_core2.c -o CMakeFiles/corewar_vm_validation.dir/read_core2.c.s
 
 CMakeFiles/corewar_vm_validation.dir/read_core2.c.o.requires:
 
@@ -249,6 +249,54 @@ CMakeFiles/corewar_vm_validation.dir/read_core2.c.o.provides: CMakeFiles/corewar
 CMakeFiles/corewar_vm_validation.dir/read_core2.c.o.provides.build: CMakeFiles/corewar_vm_validation.dir/read_core2.c.o
 
 
+CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
+CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o: ../visualization/visualization.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/visualization/visualization.c
+
+CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/visualization/visualization.c > CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.i
+
+CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/visualization/visualization.c -o CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.s
+
+CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o.requires:
+
+.PHONY : CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o.requires
+
+CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o.provides: CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o.requires
+	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o.provides.build
+.PHONY : CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o.provides
+
+CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o.provides.build: CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o
+
+
+CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o: CMakeFiles/corewar_vm_validation.dir/flags.make
+CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o: ../visualization/set_color.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o   -c /nfs/2016/m/mkaliber/Documents/ym_corewar/visualization/set_color.c
+
+CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/m/mkaliber/Documents/ym_corewar/visualization/set_color.c > CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.i
+
+CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/m/mkaliber/Documents/ym_corewar/visualization/set_color.c -o CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.s
+
+CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o.requires:
+
+.PHONY : CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o.requires
+
+CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o.provides: CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o.requires
+	$(MAKE) -f CMakeFiles/corewar_vm_validation.dir/build.make CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o.provides.build
+.PHONY : CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o.provides
+
+CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o.provides.build: CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o
+
+
 # Object files for target corewar_vm_validation
 corewar_vm_validation_OBJECTS = \
 "CMakeFiles/corewar_vm_validation.dir/read_core.c.o" \
@@ -258,7 +306,9 @@ corewar_vm_validation_OBJECTS = \
 "CMakeFiles/corewar_vm_validation.dir/map.c.o" \
 "CMakeFiles/corewar_vm_validation.dir/error.c.o" \
 "CMakeFiles/corewar_vm_validation.dir/core2.c.o" \
-"CMakeFiles/corewar_vm_validation.dir/read_core2.c.o"
+"CMakeFiles/corewar_vm_validation.dir/read_core2.c.o" \
+"CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o" \
+"CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o"
 
 # External object files for target corewar_vm_validation
 corewar_vm_validation_EXTERNAL_OBJECTS =
@@ -271,10 +321,12 @@ corewar_vm_validation: CMakeFiles/corewar_vm_validation.dir/map.c.o
 corewar_vm_validation: CMakeFiles/corewar_vm_validation.dir/error.c.o
 corewar_vm_validation: CMakeFiles/corewar_vm_validation.dir/core2.c.o
 corewar_vm_validation: CMakeFiles/corewar_vm_validation.dir/read_core2.c.o
+corewar_vm_validation: CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o
+corewar_vm_validation: CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o
 corewar_vm_validation: CMakeFiles/corewar_vm_validation.dir/build.make
 corewar_vm_validation: ../libft/libft.a
 corewar_vm_validation: CMakeFiles/corewar_vm_validation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable corewar_vm_validation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable corewar_vm_validation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/corewar_vm_validation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -290,6 +342,8 @@ CMakeFiles/corewar_vm_validation.dir/requires: CMakeFiles/corewar_vm_validation.
 CMakeFiles/corewar_vm_validation.dir/requires: CMakeFiles/corewar_vm_validation.dir/error.c.o.requires
 CMakeFiles/corewar_vm_validation.dir/requires: CMakeFiles/corewar_vm_validation.dir/core2.c.o.requires
 CMakeFiles/corewar_vm_validation.dir/requires: CMakeFiles/corewar_vm_validation.dir/read_core2.c.o.requires
+CMakeFiles/corewar_vm_validation.dir/requires: CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o.requires
+CMakeFiles/corewar_vm_validation.dir/requires: CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o.requires
 
 .PHONY : CMakeFiles/corewar_vm_validation.dir/requires
 
@@ -298,6 +352,6 @@ CMakeFiles/corewar_vm_validation.dir/clean:
 .PHONY : CMakeFiles/corewar_vm_validation.dir/clean
 
 CMakeFiles/corewar_vm_validation.dir/depend:
-	cd /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/DependInfo.cmake --color=$(COLOR)
+	cd /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /nfs/2016/m/mkaliber/Documents/ym_corewar /nfs/2016/m/mkaliber/Documents/ym_corewar /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug /nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/CMakeFiles/corewar_vm_validation.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/corewar_vm_validation.dir/depend
 

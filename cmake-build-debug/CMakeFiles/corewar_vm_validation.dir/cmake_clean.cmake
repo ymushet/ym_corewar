@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/corewar_vm_validation.dir/error.c.o"
   "CMakeFiles/corewar_vm_validation.dir/core2.c.o"
   "CMakeFiles/corewar_vm_validation.dir/read_core2.c.o"
+  "CMakeFiles/corewar_vm_validation.dir/visualization/visualization.c.o"
+  "CMakeFiles/corewar_vm_validation.dir/visualization/set_color.c.o"
   "corewar_vm_validation.pdb"
   "corewar_vm_validation"
 )

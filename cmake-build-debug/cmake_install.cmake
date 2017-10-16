@@ -1,4 +1,4 @@
-# Install script for directory: /nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation
+# Install script for directory: /nfs/2016/m/mkaliber/Documents/ym_corewar
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/nfs/2016/y/ymushet/CLionProjects/corewar_wm_validation/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/nfs/2016/m/mkaliber/Documents/ym_corewar/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
