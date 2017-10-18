@@ -130,12 +130,12 @@ void		ft_parse_args(int argc, char **argv, int i)
 		}
 		i++;
 	}
-	player = head;
-	while (player)
-	{
-		printf("!!!\n");
-		printf("name %s\n", player->prog_name);
-		printf("num %d\n", player->number);
-		player = player->next;
-	}
+	// player = head;
+	// while (player)
+	// {
+	// 	printf("!!!\n");
+	// 	printf("name %s\n", player->prog_name);
+	// 	printf("num %d\n", player->number);
+	// 	player = player->next;
+	// }
 }
