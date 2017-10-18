@@ -1,7 +1,6 @@
 #ifndef COREWAR_H
 #define COREWAR_H
 # include "./libft/libft.h"
-# include "./libft/libftprintf.h"
 # include "op.h"
 # include "global.h"
 //# include "./visualization/visualization.h"

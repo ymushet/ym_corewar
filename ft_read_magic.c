@@ -1,4 +1,4 @@
-#include "corewar"
+#include "corewar.h"
 
 static int ft_validate_magic(unsigned char *magic)
 {
