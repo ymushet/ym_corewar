@@ -16,7 +16,7 @@ $(NAME): $(BINS)
 	make -C libft/
 	gcc $(LIB) -o $(NAME) $(BINS)
 %.o: %.c
-	gcc -o $@ -c $<
+	gcc $(FLAGS) -o $@ -c $<
 clean:
 	make -C libft/ clean
 	rm -rf $(BINS)

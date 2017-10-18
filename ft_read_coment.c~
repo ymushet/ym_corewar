@@ -3,8 +3,8 @@
 int ft_read_comment(int fd, t_player *player)
 {
 	ssize_t r;
-	ssize_t len;
-
+	size_t len;
+	
 	len = COMMENT_LENGTH + 1;
 	while ((len % 4) != 0)
 		len++;
