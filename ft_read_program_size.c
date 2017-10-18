@@ -1,5 +1,15 @@
 #include "corewar.h"
 
+static int ft_create_int(unsigned char *magic)
+{
+	unsigned int n;
+	
+	n = 0;
+	n = (unsigned char)magic[0] << 24 | (unsigned char)magic[1] << 16 |
+	    (unsigned char)magic[2] << 8 | (unsigned char)magic[3];
+	return (n);
+}
+
 int ft_read_program_size(int fd, t_player *player)
 {
 	ssize_t r;
@@ -12,7 +22,7 @@ int ft_read_program_size(int fd, t_player *player)
 		ft_error("Not valid program size\n");
 	}
 	player->player_size = ft_create_int(player->prog_size);
-	if (player->player_size == 0 || player->player_size > CHAMP_MAX_SIZE)
+	if (player->player_size > 0 && player->player_size <= CHAMP_MAX_SIZE)
 	{
 		ft_free_player(&player);
 		close(fd);
