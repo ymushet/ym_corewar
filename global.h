@@ -1,10 +1,11 @@
 #ifndef GLOBAL
 #define GLOBAL
 #include "corewar.h"
+#include "op.h"
 
 typedef struct                  s_process
 {
-	unsigned int                regs[REG_NUMER];   //регистры
+	unsigned int                regs[REG_NUMBER];   //регистры
 	int                         cary;       //кеэри
 	int                         mem_addres; //адрес в памяти(индекс в массиве где стоит каретка)
 	int                         number;     //номер процесса (номер игрока от которого создали процесс)
