@@ -44,7 +44,7 @@ void ft_game_cycle(t_process *process)//, unsigned char **map)
 		p = process;
 		while (p != NULL)
 		{
-			ft_execute_process(g_dt.process_g);//, &g_dt, g_dt.map);
+			//ft_execute_process(g_dt.process_g);//, &g_dt, g_dt.map);
 			p = p->next;
 			g_dt.cycle++;
 		}
