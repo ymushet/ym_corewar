@@ -11,6 +11,8 @@ int main(int argc, char **argv)
 		ft_putstr("yo\n");
 		g_dt.map = ft_create_map(g_dt.player_g, g_dt.count_players);
 		g_dt.process_g = ft_create_proceses(g_dt.player_g);
+		init_ncurses();
+		print_map();
 		ft_game_cycle(g_dt.process_g);//, g_dt.map);
 	}
 	return (0);

@@ -15,6 +15,7 @@
 # include "./libft/libft.h"
 # include "op.h"
 # include "global.h"
+# include "visualization/visualization.h"
 # include <fcntl.h>
 # define HEX 16
 
