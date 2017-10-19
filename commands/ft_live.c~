@@ -2,7 +2,7 @@
 
 static int ft_read_argc(unsigned char *args)
 {
-
+	
 	return (1);
 }
 
@@ -25,6 +25,7 @@ void ft_live(t_process *process)
 	else if (process->exec_cycle == -1)
 	{
 		process->exec_cycle = op_tab[0].cycle;
+		process->op_code = f
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 19:14:24 by ymushet           #+#    #+#             */
-/*   Updated: 2017/10/19 18:08:59 by ymushet          ###   ########.fr       */
+/*   Updated: 2017/10/19 16:17:39 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,4 @@ int				check_dump(char *str_next, char *str);
 void			player_add(t_player **head, t_player *new);
 int				ft_isadigit(char *str, char max_dump_or_ply);
 int				ft_create_int(unsigned char *magic);
-int				ft_increment_index(t_process *process);
 #endif

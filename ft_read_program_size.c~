@@ -1,6 +1,6 @@
 #include "corewar.h"
 
-int ft_create_int(unsigned char *magic)
+static int ft_create_int(unsigned char *magic)
 {
 	unsigned int n;
 	
