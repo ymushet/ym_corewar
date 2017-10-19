@@ -33,7 +33,7 @@ unsigned char		**ft_create_map(t_player *player, int n)
 	p = player;
 	map = malloc(sizeof(char*) * 4);
 	map[3] = NULL;
-	mod = MEM_SIZE / g_dt.count_players;
+	mod = MEM_SIZE / 1; //g_dt.count_players;
 	map[0] = (unsigned char*)ft_strnew(MEM_SIZE);
 	map[1] = (unsigned char*)ft_strnew(MEM_SIZE);
 	map[2] = (unsigned char*)ft_strnew(MEM_SIZE);
