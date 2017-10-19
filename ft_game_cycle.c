@@ -52,7 +52,7 @@ void	ft_execute_command(t_process *p, int c)
 	c == 4 ? ft_add(p) : 0;
 	c == 5 ? ft_sub(p) : 0;
 	c == 6 ? ft_and(p) : 0;
-	c == 7 ? ft_or(p); 0;
+	c == 7 ? ft_or(p): 0;
 	c == 8 ? ft_xor(p) : 0;
 	c == 9 ? ft_zjup(p) : 0;
 	c == 10 ? ft_ldi(p) : 0;
@@ -74,7 +74,7 @@ static void ft_execute_process(t_process *p)//, t_data *data, unsigned char **ma
 		p->command = i;
 		if (i != 1 && i != 9 && i != 12 && i != 15)
 			p->codage_octal =  (int)(g_dt.map[0][ft_increment_index(p)]);
-		ft_execute_command(i);
+		ft_execute_command(p, i);
     }
     else
 	{
