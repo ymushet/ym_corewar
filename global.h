@@ -1,7 +1,6 @@
 #ifndef GLOBAL
 #define GLOBAL
 #include "corewar.h"
-#include "op.h"
 
 typedef struct                  s_process
 {

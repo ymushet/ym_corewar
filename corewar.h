@@ -31,7 +31,6 @@ int				ft_read_comment(int fd, t_player *player);
 int				ft_read_magic(int fd, t_player *player);
 int				ft_read_program_name(int fd, t_player *player);
 int				ft_read_program_size(int fd, t_player *player);
-int				ft_read_instructions(int fd, t_player *player);
 void			ft_parse_args(int fd, char **argv, int i, t_player *head);
 void			ft_game_cycle(t_process *process);//, unsigned char **map);
 int				check_dump(char *str_next, char *str);
