@@ -49,7 +49,7 @@ void	parse_player(int fd, t_player **h, int num, t_player *p)
 {
 	p = ft_read_from_core(fd, num);
 	player_add(h, p);
-//	count_players++;
+	g_dt.count_players++;
 }
 
 int		get_fd(char *file_name)
@@ -69,17 +69,14 @@ int		get_fd(char *file_name)
 
 int 		basic_check(char *str)
 {
-	int 	g_a;
-	int 	g_v;
-
 	if (ft_strcmp(str, "-v") == 0)
 	{
-		g_v = 1;
+		g_dt.visual = 1;
 		return (1);
 	}
 	else if (ft_strcmp(str, "-a") == 0)
 	{
-		g_a = 1;
+		g_dt.aff = 1;
 		return (1);
 	}
 	return (0);
@@ -87,12 +84,9 @@ int 		basic_check(char *str)
 
 int 		check_dump(char *str_next, char *str)
 {
-	int 	g_dump;
-
 	if (ft_strcmp(str, "-dump") == 0 && str_next && ft_isadigit(str_next))
 	{
-		g_dump = ft_atoi(str_next);
-		printf("dump is %d\n", g_dump);
+		g_dt.dump = ft_atoi(str_next);
 		return (1);
 	}
 	return (0);
@@ -100,11 +94,10 @@ int 		check_dump(char *str_next, char *str)
 
 void		ft_parse_args(int argc, char **argv, int i)
 {
-	int 	fd;
-	t_player	*player;
+	int 		fd;
 	t_player	*head;
 
-	player = NULL;
+	g_dt.player_g = NULL;
 	head = NULL;
 	while (i < argc)
 	{
@@ -119,23 +112,27 @@ void		ft_parse_args(int argc, char **argv, int i)
 					fd = get_fd(argv[i + 2]);
 					if (!find_players_num(head, ft_atoi(argv[i + 1])))
 						ft_error("Invalid flag\n");
-					parse_player(fd, &head, ft_atoi(argv[i + 1]), player);
+					parse_player(fd, &head, ft_atoi(argv[i + 1]), g_dt.player_g);
 					i += 2;
 				}
 				else
 					ft_error("Invalid flag\n");
 			}
 			else
-				parse_player(get_fd(argv[i]), &head, 0, player);
+				parse_player(get_fd(argv[i]), &head, 0, g_dt.player_g);
 		}
 		i++;
 	}
-	// player = head;
-	// while (player)
-	// {
-	// 	printf("!!!\n");
-	// 	printf("name %s\n", player->prog_name);
-	// 	printf("num %d\n", player->number);
-	// 	player = player->next;
-	// }
+	g_dt.player_g = head;
+	t_player *pl;
+	pl = g_dt.player_g;
+	while (pl)
+	{
+		printf("!!!\n");
+		printf("name %s\n", pl->prog_name);
+		printf("num %d\n", pl->number);
+		pl = pl->next;
+
+	}
+	printf("# of players %d\n", g_dt.count_players);
 }
