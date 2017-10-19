@@ -15,7 +15,7 @@ static 			t_process *ft_malloc_process(t_player *player)
 	new->func = NULL;
 	new->number = player->number;
 	new->mem_addres = player->mem_addr;
-	new->dell = 0;
+	new->alive = 0;
 	new->next = NULL;
 	return (new);
 }

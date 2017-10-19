@@ -10,6 +10,7 @@ void	ft_init_global(void)
 	g_dt.max_checks = 0;
 	g_dt.cycle = 0;
 	g_dt.last_live = 0;
+	g_dt.cycle_per_sec = 50;
 	g_dt.cycle2die = CYCLE_TO_DIE;
 	g_dt.map = NULL;
 	g_dt.player_g = NULL;

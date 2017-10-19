@@ -7,7 +7,7 @@ void    ft_kill_processes(t_process **head)
 
 	h = *head;
 	prev = NULL;
-	while (h != NULL && h->dell == 1)
+	while (h != NULL && h->alive == 0)
 	{
 		*head = h->next;
 		free(h);
@@ -15,7 +15,7 @@ void    ft_kill_processes(t_process **head)
 	}
 	while (h != NULL)
 	{
-		while (h != NULL && h->dell != 1)
+		while (h != NULL && h->alive != 0)
 		{
 			prev = h;
 			h = h->next;

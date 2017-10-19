@@ -11,7 +11,7 @@ typedef struct                  s_process
 	int                         number;     //номер процесса (номер игрока от которого создали процесс)
 	void                        (*func)();  //указатель на функцию (указатель на команду, которая исполняется)
 	int                         exec_cycle; //цикл исполнения (сколько циклов осталось ждать до исполнения команды
-	int                         dell;       //флаг удаления процесса. Если 1 то Килл!
+	int                         alive;       //флаг удаления процесса. Если 1 то Килл!
 	struct s_process            *next;
 }                               t_process;
 
@@ -39,6 +39,7 @@ typedef struct                  s_data
 	int                         cycle;
 	int                         last_live;
 	int                         cycle2die;
+	int                         cycle_per_sec;
 	unsigned char               **map;
 	t_player                    *player_g;
 	t_process                   *process_g;
