@@ -25,43 +25,44 @@ static int	ft_is_command(t_process *p)
 {
 	int i;
 
-	(unsigned int)g_dt.map[0][p->mem_addres] == 0x01 ? i = 1 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x02 ? i = 2 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x03 ? i = 3 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x04 ? i = 4 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x05 ? i = 5 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x06 ? i = 6 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x07 ? i = 7 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x08 ? i = 8 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x09 ? i = 9 : i = 0;
-	(unsigned int)g_dt.map[0][p->mem_addres] == 0x0A ? i = 10 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x0B ? i = 11 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x0C ? i = 12 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x0D ? i = 13 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x0E ? i = 14 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x0F ? i = 15 : i = 0;
-    (unsigned int)g_dt.map[0][p->mem_addres] == 0x10 ? i = 16 : i = 0;
+	i = 0;
+	g_dt.map[0][p->mem_addres] == 0x01 ? i = 1 : 0;
+    g_dt.map[0][p->mem_addres] == 0x02 ? i = 2 : 0;
+    g_dt.map[0][p->mem_addres] == 0x03 ? i = 3 : 0;
+    g_dt.map[0][p->mem_addres] == 0x04 ? i = 4 : 0;
+    g_dt.map[0][p->mem_addres] == 0x05 ? i = 5 : 0;
+    g_dt.map[0][p->mem_addres] == 0x06 ? i = 6 : 0;
+    g_dt.map[0][p->mem_addres] == 0x07 ? i = 7 : 0;
+    g_dt.map[0][p->mem_addres] == 0x08 ? i = 8 : 0;
+    g_dt.map[0][p->mem_addres] == 0x09 ? i = 9 : 0;
+	g_dt.map[0][p->mem_addres] == 0x0A ? i = 10 : 0;
+    g_dt.map[0][p->mem_addres] == 0x0B ? i = 11 : 0;
+    g_dt.map[0][p->mem_addres] == 0x0C ? i = 12 : 0;
+    g_dt.map[0][p->mem_addres] == 0x0D ? i = 13 : 0;
+    g_dt.map[0][p->mem_addres] == 0x0E ? i = 14 : 0;
+    g_dt.map[0][p->mem_addres] == 0x0F ? i = 15 : 0;
+    g_dt.map[0][p->mem_addres] == 0x10 ? i = 16 : 0;
 	return (i);
 }
 
 void	ft_execute_command(t_process *p, int c)
 {
-	c == 1 ? ft_live(p) : 0;
-	c == 2 ? ft_ld(p) : 0;
-	c == 3 ? ft_st(p) : 0;
-	c == 4 ? ft_add(p) : 0;
-	c == 5 ? ft_sub(p) : 0;
-	c == 6 ? ft_and(p) : 0;
-	c == 7 ? ft_or(p): 0;
-	c == 8 ? ft_xor(p) : 0;
-	c == 9 ? ft_zjup(p) : 0;
-	c == 10 ? ft_ldi(p) : 0;
+	//c == 1 ? ft_live(p) : 0;
+	// c == 2 ? ft_ld(p) : 0;
+	// c == 3 ? ft_st(p) : 0;
+	// c == 4 ? ft_add(p) : 0;
+	// c == 5 ? ft_sub(p) : 0;
+	// c == 6 ? ft_and(p) : 0;
+	// c == 7 ? ft_or(p): 0;
+	// c == 8 ? ft_xor(p) : 0;
+	// c == 9 ? ft_zjup(p) : 0;
+	// c == 10 ? ft_ldi(p) : 0;
 	c == 11 ? ft_sti(p) : 0;
-	c == 12 ? ft_fork(p) : 0;
-	c == 13 ? ft_lld(p) : 0;
-	c == 14 ? ft_lldi(p) : 0;
-	c == 15 ? ft_lfork(p) : 0;
-	c == 16 ? ft_aff(p) : 0;
+	// c == 12 ? ft_fork(p) : 0;
+	// c == 13 ? ft_lld(p) : 0;
+	// c == 14 ? ft_lldi(p) : 0;
+	// c == 15 ? ft_lfork(p) : 0;
+	// c == 16 ? ft_aff(p) : 0;
 }
 
 static void ft_execute_process(t_process *p)//, t_data *data, unsigned char **map)

@@ -30,4 +30,5 @@ void ft_lld(t_process *process);
 void ft_lldi(t_process *process);
 void ft_lfork(t_process *process);
 void ft_aff(t_process *process);
+void ft_zjump(t_process *process);
 #endif

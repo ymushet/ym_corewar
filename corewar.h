@@ -16,6 +16,7 @@
 # include "op.h"
 # include "global.h"
 # include "visualization/visualization.h"
+# include "commands/commands.h"
 # include <fcntl.h>
 # define HEX 16
 

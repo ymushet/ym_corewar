@@ -2,7 +2,6 @@
 
 static int ft_read_argc(unsigned char *args)
 {
-
 	return (1);
 }
 

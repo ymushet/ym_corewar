@@ -196,31 +196,4 @@ void		ft_sti(t_process *process)
 	else
 		process->mem_addres = ft_increment_index(process);
 	ft_bzero(process->args, 16);
-
-
-
-
-
-
-
-
-
-//	void			ft_sti(t_corewar *data, t_carriage *src)
-//	char	op_code;
-//	int		i;
-//
-//	op_code = data->field[src->position + 1];
-//	i = src->position;
-//	if (op_code == 88 || op_code == 84 || op_code == 104 || op_code == 100 ||
-//		op_code == 120 || op_code == 116)
-//		ft_take_arg(data, src, 0, data->field[src->position + 1]);
-//	if (op_code == 88 || op_code == 84)
-//		ft_sti_1(data, src, op_code, i);
-//	else if (op_code == 104 || op_code == 100)
-//		ft_sti_2(data, src, op_code, i);
-//	else if (op_code == 120 || op_code == 116)
-//		ft_sti_3(data, src, op_code, i);
-//	else
-//		ft_inc_index(src);
-//	ft_bzero(src->arg, 16);
 }
