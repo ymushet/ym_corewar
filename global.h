@@ -46,7 +46,6 @@ typedef struct                  s_data
 	unsigned char               **map;
 	t_player                    *player_g;
 	t_process                   *process_g;
-	int 						count_processes;
 }                               t_data;
 
 t_data g_dt;
