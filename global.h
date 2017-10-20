@@ -42,6 +42,7 @@ typedef struct                  s_data
 	int                         last_live;
 	int                         cycle2die;
 	int                         cycle_per_sec;
+	int 						count_processes;
 	unsigned char               **map;
 	t_player                    *player_g;
 	t_process                   *process_g;

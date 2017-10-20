@@ -96,7 +96,7 @@ void ft_game_cycle(t_process *process)//, unsigned char **map)
 			p = p->next;
 			g_dt.cycle++;
 		}
-		print_map();
+		// print_map();
 		ft_change_cycle2die(&g_dt);
 		ft_kill_processes(&process);
 	}
