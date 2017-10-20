@@ -40,10 +40,10 @@ void	ft_write_bold(int num, int start, int end)
 
 void 			ft_write_col(int num, int address)
 {
-	g_dt.map[1][ft_get_value(address)] = (unsigned char)(num + 64);
-	g_dt.map[1][ft_get_value(address + 1)] = (unsigned char)(num + 64);
-	g_dt.map[1][ft_get_value(address + 2)] = (unsigned char)(num + 64);
-	g_dt.map[1][ft_get_value(address + 3)] = (unsigned char)(num + 64);
+	g_dt.map[1][ft_get_value(address)] = (unsigned char)(num);
+	g_dt.map[1][ft_get_value(address + 1)] = (unsigned char)(num);
+	g_dt.map[1][ft_get_value(address + 2)] = (unsigned char)(num);
+	g_dt.map[1][ft_get_value(address + 3)] = (unsigned char)(num);
 }
 
 void		ft_sti_01(t_process *process, char codage_octal, int i)
