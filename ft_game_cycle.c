@@ -86,7 +86,9 @@ static void ft_execute_process(t_process *p)//, t_data *data, unsigned char **ma
 void ft_game_cycle(t_process *process)//, unsigned char **map)
 {
 	t_process *p;
-
+	
+	g_dt.cycle = 0;
+	g_dt.change_cycle = 0;
 	while (g_dt.cycle2die > 0 || process != NULL) //add if for --dump
 	{
 		p = process;
@@ -95,10 +97,17 @@ void ft_game_cycle(t_process *process)//, unsigned char **map)
 			ft_execute_process(p);//, &g_dt, g_dt.map);
 			p = p->next;
 			g_dt.cycle++;
+			g_dt.change_cycle++;
+			print_map();
+			ft_putstr_vis_int((int)g_dt.cycle);
 		}
-		// print_map();
-		ft_change_cycle2die(&g_dt);
-		ft_kill_processes(&process);
+		//ft_reset(); //занулять обратно, все что нужно занулять каждый период (например количесство жизней у игроков)
+		if (g_dt.change_cycle == g_dt.cycle2die)
+		{ //tнастало время цыкла умереть
+			ft_change_cycle2die(&g_dt);
+			ft_kill_processes(&process);
+			g_dt.change_cycle = 0;
+		}
 	}
-	printf("FINISHED\n"); /*вывод победителя и его имя!*/
+	ft_putstr_vis("FINISH\n"); /*вывод победителя и его имя!*/
 }

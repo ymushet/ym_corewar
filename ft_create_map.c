@@ -32,17 +32,13 @@ unsigned char		**ft_create_map(t_player *player, int n)
 	i = 0;
 	p = player;
 	map = malloc(sizeof(char*) * 4);
+	mod = MEM_SIZE / g_dt.count_players;
 	map[3] = NULL;
 	mod = MEM_SIZE / g_dt.count_players;
-//	ft_putstr("HERE\n");
-	map = malloc(sizeof(char*) * 4);
-	map[3] = NULL;
-	mod = MEM_SIZE / g_dt.count_players;
-//	ft_putstr("AND HERE\n");
 	map[0] = (unsigned char*)ft_strnew(MEM_SIZE);
 	map[1] = (unsigned char*)ft_strnew(MEM_SIZE);
 	map[2] = (unsigned char*)ft_strnew(MEM_SIZE);
-	ft_memset(map[2], 48, MEM_SIZE);
+	ft_memset(map[2], 0, MEM_SIZE);
 	ft_memset(map[1], 48, MEM_SIZE);
 	while (p != NULL)
 	{

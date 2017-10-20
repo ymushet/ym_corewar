@@ -17,6 +17,7 @@ static t_player *ft_malloc_player(unsigned int n)
 		len++;
 	player->comment = (unsigned char*)ft_strnew(len);
 	player->number = n;
+	player->n_live = 0;
 	player->instructions = NULL;
 	player->next = NULL;
 	return (player);

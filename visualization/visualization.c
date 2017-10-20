@@ -31,13 +31,12 @@ void    print_map()
 			if (i % 62 == 0)
 				break ;
 			x += g_vh.step;
-			g_dt.cycle++;
 		}
 		++y;
 	}
-	usleep(g_vh.speed);
 	wrefresh(g_vh.gen_win);
 	wrefresh(g_vh.info);
+	usleep(g_vh.speed);
 	ft_pause_first();
 }
 
@@ -112,7 +111,7 @@ void init_avatar()
 void	init_ncurses(void)
 {
 	g_vh.pause = 1;
-	g_vh.speed = 10000;
+	g_vh.speed = 150000;
 	initscr();
 	start_color();
 	keypad(stdscr, true);

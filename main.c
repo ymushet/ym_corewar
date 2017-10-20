@@ -13,13 +13,6 @@ int main(int argc, char **argv)
 		g_dt.process_g = ft_create_proceses(g_dt.player_g);
 		init_ncurses();
 		print_map();
-		ft_putstr_vis("dsajkdsa");
-		ft_putstr_vis("dsajkdsa");
-		ft_putstr_vis("dsajkdsa");
-		ft_putstr_vis("dsajkdsa");
-		ft_putstr_vis("dsajkdsa");
-		ft_putstr_vis("dsajkdsa");
-		ft_putstr_vis("dsajkdsa");
 		ft_game_cycle(g_dt.process_g);//, g_dt.map);
 	}
 	return (0);

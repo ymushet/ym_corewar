@@ -28,6 +28,7 @@ typedef struct 		    	    s_player
 	unsigned char               *instructions;//интсрукции
 	int                         mem_addr;	  //адрес начала инструкции в памяти игры
 	struct s_player             *next;
+	int 						n_live;
 }						        t_player;
 
 typedef struct                  s_data
@@ -43,6 +44,7 @@ typedef struct                  s_data
 	int                         cycle2die;
 	int                         cycle_per_sec;
 	int 						count_processes;
+	int 						change_cycle;
 	unsigned char               **map;
 	t_player                    *player_g;
 	t_process                   *process_g;

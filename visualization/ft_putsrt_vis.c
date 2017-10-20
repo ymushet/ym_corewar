@@ -21,7 +21,7 @@ void    upd_term()
 		mvwprintw(g_vh.term, g_vh.term_i, 1, "%s",  " ");
 	wrefresh(g_vh.term);
 	g_vh.term_i = 0;
-	usleep(50000);
+	usleep(5);
 }
 
 void   ft_putstr_vis(char *str)
