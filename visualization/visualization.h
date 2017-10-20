@@ -19,6 +19,7 @@
 # include "curses.h"
 # include <pthread.h>
 # define FIELD_Y
+# include "../corewar.h"
 
 # define P1 1
 # define P2 2
@@ -32,6 +33,12 @@
 # define P4CAR 14
 # define AVATAR 15
 # define AVATARB 16
+
+# define B1BOLT 17
+# define B2BOLT 18
+# define B3BOLT 19
+# define B4BOLT 20
+# define CAR_NP 21
 
 
 typedef struct  s_visual
@@ -53,6 +60,7 @@ typedef struct  s_visual
 	int     term_i;
 	int     pause;
 	int     speed;
+	char    *color_pair;
 }               t_vis;
 
 t_vis        g_vh;
@@ -63,8 +71,9 @@ void    print_map();
 
 void    ft_set_pair();
 
-void   set_color_on_map(int gen, int pl, int car);
-void   set_color_off_map(int gen, int pl, int car);
+void   set_color_on_map(int gen, int pl, int bold, int ind);
+void   set_color_off_map(int gen, int pl, int bold, int ind);
+void   ft_putstr_vis_int(int str);
 void   ft_print_info(void);
 void   ft_adaptive();
 void    gen_key(void);

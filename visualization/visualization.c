@@ -9,6 +9,7 @@
 # include "../corewar.h"
 
 
+
 void    print_map()
 {
 	int i;
@@ -23,9 +24,9 @@ void    print_map()
 		x = 2;
 		while (i < MEM_SIZE)
 		{
-			set_color_on_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i]);
+			set_color_on_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i], i);
 			mvwprintw(g_vh.gen_win, y, x, "%.2X", (int)g_dt.map[0][i]);
-			set_color_off_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i]);
+			set_color_off_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i], i);
 			++i;
 			if (i % 62 == 0)
 				break ;
@@ -34,6 +35,7 @@ void    print_map()
 		}
 		++y;
 	}
+	usleep(g_vh.speed);
 	wrefresh(g_vh.gen_win);
 	wrefresh(g_vh.info);
 	ft_pause_first();
@@ -82,6 +84,7 @@ void fgp(char *str)
 
 void init_avatar()
 {
+	g_vh.term_i = 1;
 	getmaxyx(stdscr, g_vh.av_pos_y, g_vh.av_pos_x);
 	g_vh.avatar = newwin(g_vh.av_pos_y, g_vh.av_pos_x, 0, 0);
 	g_vh.av_pos = g_vh.av_pos_y / 2 - 7;
@@ -109,6 +112,7 @@ void init_avatar()
 void	init_ncurses(void)
 {
 	g_vh.pause = 1;
+	g_vh.speed = 10000;
 	initscr();
 	start_color();
 	keypad(stdscr, true);

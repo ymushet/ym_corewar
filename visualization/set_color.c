@@ -2,7 +2,7 @@
 // Created by Maksym Kaliberda on 16.10.17.
 //
 
-# include "visualization.h"
+# include "../corewar.h"
 
 void   ft_adaptive()
 {
@@ -35,26 +35,63 @@ void    ft_set_pair()
 	init_pair(P2CAR, COLOR_RED, COLOR_YELLOW);
 	init_pair(P3CAR, COLOR_RED, COLOR_CYAN);
 	init_pair(P4CAR, COLOR_RED, COLOR_GREEN);
+	init_pair(CAR_NP, COLOR_WHITE, COLOR_RED);
+	init_pair(B1BOLT, COLOR_MAGENTA, COLOR_BLACK);
+	init_pair(B2BOLT, COLOR_YELLOW, COLOR_BLACK);
+	init_pair(B3BOLT, COLOR_CYAN, COLOR_BLACK);
+	init_pair(B4BOLT, COLOR_GREEN, COLOR_BLACK);
 	init_pair(AVATAR, COLOR_GREEN, COLOR_GREEN);
 	init_pair(AVATARB, COLOR_BLACK, COLOR_BLACK);
 }
 
-void set_color_on_map(int gen, int pl, int car)
+int   check_car(int ind)
 {
-	if (pl == 48)
-		wattron(g_vh.gen_win, COLOR_PAIR(START));
-	if(pl != 48 && car == 48)
-		wattron(g_vh.gen_win, COLOR_PAIR(pl - 64));
-	if(pl != 48 && car != 48)
-		wattron(g_vh.gen_win, COLOR_PAIR(pl - 64 + 10));
+	t_process *p;
+	
+	p = g_dt.process_g;
+	while (p)
+	{
+		if (ind == (int)p->mem_addres)
+			return (1);
+		p = p->next;
+	}
+	return (0);
 }
 
-void set_color_off_map(int gen, int pl, int car)
+void set_color_on_map(int gen, int pl, int bold, int ind)
 {
-	if (pl == 48)
-		wattroff(g_vh.gen_win, COLOR_PAIR(START));
-	if(pl != 48)
+	if(check_car(ind) == 1)
+	{
+		if (pl != 48)
+			wattron(g_vh.gen_win, COLOR_PAIR(pl - 64 + 10));
+		else if (pl == 48)
+			wattron(g_vh.gen_win, COLOR_PAIR(CAR_NP));
+	}
+	else if (pl != 48 && bold == 0)
+		wattron(g_vh.gen_win, COLOR_PAIR(pl - 64));
+	else if (pl != 48 && bold > 0)
+		wattron(g_vh.gen_win, COLOR_PAIR(pl - 64) | A_BOLD);
+	else if (pl == 48)
+		wattron(g_vh.gen_win, COLOR_PAIR(START));
+	
+}
+
+void set_color_off_map(int gen, int pl, int bold, int ind)
+{
+	if(check_car(ind) == 1)
+	{
+		if (pl != 48)
+			wattroff(g_vh.gen_win, COLOR_PAIR(pl - 64 + 10));
+		else if (pl == 48)
+			wattroff(g_vh.gen_win, COLOR_PAIR(CAR_NP));
+	}
+	else if (pl != 48 && bold == 0)
 		wattroff(g_vh.gen_win, COLOR_PAIR(pl - 64));
-	if(pl != 48 && car != 48)
-		wattron(g_vh.gen_win, COLOR_PAIR(pl - 64 + 10));
+	else if (pl != 48 && bold > 0)
+	{
+		wattroff(g_vh.gen_win, COLOR_PAIR(pl - 64) | A_BOLD);
+		g_dt.map[2][ind]--;
+	}
+	else if (pl == 48)
+		wattroff(g_vh.gen_win, COLOR_PAIR(START));
 }
