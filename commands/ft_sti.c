@@ -29,6 +29,23 @@ int		ft_get_value(int ind)
 	return (result);
 }
 
+void	ft_write_bold(int num, int start, int end)
+{
+	int 	i;
+
+	i = -1;
+	while (++i < end)
+		g_dt.map[2][ft_get_value(start + i)] = (unsigned char)(-num);
+}
+
+void 			ft_write_col(int num, int address)
+{
+	g_dt.map[1][ft_get_value(address)] = (unsigned char)(num + 64);
+	g_dt.map[1][ft_get_value(address + 1)] = (unsigned char)(num + 64);
+	g_dt.map[1][ft_get_value(address + 2)] = (unsigned char)(num + 64);
+	g_dt.map[1][ft_get_value(address + 3)] = (unsigned char)(num + 64);
+}
+
 void		ft_sti_01(t_process *process, char codage_octal, int i)
 {
 	if (codage_octal == 88 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
@@ -39,8 +56,8 @@ void		ft_sti_01(t_process *process, char codage_octal, int i)
 		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
 		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
 		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-//		ft_write_meta(data, src->name, i);
-//		dk_field_meta(data->meta_bold, -50, i, 4);
+		ft_write_col(process->number, i);
+		ft_write_bold(-50, i, 4);
 	}
 	else if (codage_octal == 84 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
 			 process->args[2] >= 0 && process->args[2] <= REG_NUMBER && process->args[3] >= 0 &&
@@ -51,8 +68,8 @@ void		ft_sti_01(t_process *process, char codage_octal, int i)
 		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
 		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
 		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-//		ft_write_meta(data, src->name, i);
-//		dk_field_meta(data->meta_bold, -50, i, 4);
+		ft_write_col(process->number, i);
+		ft_write_bold(-50, i, 4);
 	}
 }
 
@@ -135,8 +152,8 @@ static void		ft_sti_03(t_process *process, char op_code, int i)
 		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
 		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
 		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-//		ft_write_meta(data, src->name, i);
-//		dk_field_meta(data->meta_bold, -50, i, 4);
+		ft_write_col(process->number, i);
+		ft_write_bold(-50, i, 4);
 	}
 	else if (op_code == 116 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
 			 process->args[3] >= 0 && process->args[3] <= REG_NUMBER)
@@ -147,10 +164,12 @@ static void		ft_sti_03(t_process *process, char op_code, int i)
 		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
 		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
 		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-//		ft_write_meta(data, src->name, i);
-//		dk_field_meta(data->meta_bold, -50, i, 4);
+		ft_write_col(process->number, i);
+		ft_write_bold(-50, i, 4);
 	}
 }
+
+
 
 static void		ft_sti_02(t_process *process, char op_code, int i)
 {
@@ -161,8 +180,8 @@ static void		ft_sti_02(t_process *process, char op_code, int i)
 		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
 		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
 		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-//		ft_write_meta(data, src->name, i);
-//		dk_field_meta(data->meta_bold, -50, i, 4);
+		ft_write_col(process->number, i);
+		ft_write_bold(-50, i, 4);
 	}
 	else if (op_code == 100 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
 			 process->args[3] >= 0 && process->args[3] <= REG_NUMBER)
@@ -172,8 +191,8 @@ static void		ft_sti_02(t_process *process, char op_code, int i)
 		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
 		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
 		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-//		ft_write_meta(data, src->name, i);
-//		dk_field_meta(data->meta_bold, -50, i, 4);
+		ft_write_col(process->number, i);
+		ft_write_bold(-50, i, 4);
 	}
 }
 
