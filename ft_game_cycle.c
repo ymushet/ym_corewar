@@ -69,11 +69,11 @@ static void ft_execute_process(t_process *p)//, t_data *data, unsigned char **ma
 {
 	int i;
 
-	i = ft_is_command(p);
+	i = 0;//ft_is_command(p);
 	if(i != 0)
     {
 		p->command = i;
-		if (i != 1 && i != 9 && i != 12 && i != 15)
+		if (i == 11)//i != 1 && i != 9 && i != 12 && i != 15)
 			p->codage_octal =  (int)(g_dt.map[0][ft_increment_index(p)]);
 		ft_execute_command(p, i);
     }
@@ -86,17 +86,17 @@ static void ft_execute_process(t_process *p)//, t_data *data, unsigned char **ma
 void ft_game_cycle(t_process *process)//, unsigned char **map)
 {
 	t_process *p;
-	
+
 	while (g_dt.cycle2die > 0 || process != NULL) //add if for --dump
 	{
 		p = process;
 		while (p != NULL)
 		{
-			//ft_execute_process(g_dt.process_g);//, &g_dt, g_dt.map);
+			ft_execute_process(p);//, &g_dt, g_dt.map);
 			p = p->next;
 			g_dt.cycle++;
 		}
-			//print_map(data);
+		print_map();
 		ft_change_cycle2die(&g_dt);
 		ft_kill_processes(&process);
 	}
