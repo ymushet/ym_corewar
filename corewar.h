@@ -39,4 +39,8 @@ void			player_add(t_player **head, t_player *new);
 int				ft_isadigit(char *str, char max_dump_or_ply);
 int				ft_create_int(unsigned char *magic);
 int				ft_increment_index(t_process *process);
+void			ft_take_args(t_process *process, int i, int command);
+int				ft_get_value(int ind);
+void			ft_write_bold(int num, int start, int end);
+void 			ft_write_col(int num, int address);
 #endif
