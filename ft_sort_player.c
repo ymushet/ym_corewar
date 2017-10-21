@@ -47,6 +47,23 @@ int			ft_cheack_number(t_player *tmp, int i)
 	return (1);
 }
 
+void		ft_check_reiteration(void)
+{
+	t_player	*tmp;
+
+	tmp = g_dt.player_g;
+	while (tmp)
+	{
+		if (tmp->number > g_dt.count_players)
+		{
+			ft_putstr("Max -n == ");
+			ft_putnbr(g_dt.count_players);
+			ft_error("\n");
+		}
+		tmp = tmp->next;
+	}
+}
+
 void		ft_sort_player(void)
 {
 	int			i;
@@ -54,6 +71,7 @@ void		ft_sort_player(void)
 	t_player	*tmp;
 
 	i = 0;
+	ft_check_reiteration();
 	while (++i <= g_dt.count_players)
 	{
 		if (ft_cheack_number(g_dt.player_g, i))
