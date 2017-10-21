@@ -13,36 +13,66 @@
 
 # include "../corewar.h"
 
+void    ft_print_mw(char *str, int x)
+{
+	mvwprintw(g_vh.info, g_vh.inf_p, x, "%s", str);
+	g_vh.inf_p++;
+	wrefresh(g_vh.info);
+}
+
+void    ft_print_pause(void)
+{
+	int x;
+	
+	x = g_vh.inf_x / 2 - 24;
+	wattron(g_vh.info, COLOR_PAIR(COLOR_GREEN));
+	ft_print_mw("_|_|_|      _|_|    _|    _|    _|_|_|  _|_|_|_|", x);
+	ft_print_mw("_|    _|  _|    _|  _|    _|  _|        _|      ", x);
+	ft_print_mw("_|_|_|    _|_|_|_|  _|    _|    _|_|    _|_|_|  ", x);
+	ft_print_mw("_|        _|    _|  _|    _|        _|  _|      ", x);
+	ft_print_mw("_|        _|    _|    _|_|    _|_|_|    _|_|_|_|", x);
+	ft_print_mw("                                                ", x);
+	ft_print_mw("                                                ", x);
+	wattroff(g_vh.info, COLOR_PAIR(COLOR_GREEN));
+}
+
+void    ft_print_start(void)
+{
+	int x;
+	
+	x = g_vh.inf_x / 2 - 24;
+	wattron(g_vh.info, COLOR_PAIR(COLOR_GREEN));
+	ft_print_mw("         _|_|_|    _|    _|  _|      _|         ", x);
+	ft_print_mw("         _|    _|  _|    _|  _|_|    _|         ", x);
+	ft_print_mw("         _|_|_|    _|    _|  _|  _|  _|         ", x);
+	ft_print_mw("         _|    _|  _|    _|  _|    _|_|         ", x);
+	ft_print_mw("         _|    _|    _|_|    _|      _|         ", x);
+	ft_print_mw("                                                ", x);
+	ft_print_mw("                                                ", x);
+	wattroff(g_vh.info, COLOR_PAIR(COLOR_GREEN));
+}
+
+void    ft_print_speed(int c)
+{
+	int x;
+	
+	x = g_vh.inf_x / 20;
+	wattron(g_vh.info, COLOR_PAIR(INFO_STAND));
+	mvwprintw(g_vh.info, g_vh.inf_o, x, "%s", "cycles per second:");
+	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", c);
+	wattroff(g_vh.info, COLOR_PAIR(INFO_STAND));
+	wrefresh(g_vh.info);
+}
+
 void   ft_print_info(void)
 {
-	int x,y = 0;
-	g_vh.term_i = 1;
+	int x;
 	
-	int i = 0;
-	int n = 0;
-	char c;
-	char *term;
-//	while (i < 100) {
-//		gen_key();
-//		term = ft_strnew(1);
-//		wattron(g_vh.term, COLOR_PAIR(P4));
-//		mvwprintw(g_vh.term, g_vh.term_i, 1, "%s", "djkjk \n kdasjld \n");
-//		wattroff(g_vh.term, COLOR_PAIR(P4));
-//		wattron(g_vh.term, COLOR_PAIR(BORDER));
-//		wborder(g_vh.term, '.', '.', '.', '.', '.', '.', '.', '.');
-//		wattroff(g_vh.term, COLOR_PAIR(BORDER));
-//		if (g_vh.term_i > 17)
-//		{
-//			g_vh.term_i = 0;
-//			wclear(g_vh.term);
-//			wattron(g_vh.term, COLOR_PAIR(BORDER));
-//			wborder(g_vh.term, '.', '.', '.', '.', '.', '.', '.', '.');
-//			wattroff(g_vh.term, COLOR_PAIR(BORDER));
-//			wrefresh(g_vh.term);
-//		}
-//		usleep(50000);
-//		g_vh.term_i++;
-//		wrefresh(g_vh.term);
-//		i++;
-//	}
+	getmaxyx(g_vh.info, g_vh.inf_y, g_vh.inf_x);
+	getmaxyx(g_vh.info, g_vh.info_y, g_vh.info_x);
+	x = g_vh.info_x / 2;
+	ft_print_speed(1000000 / g_vh.speed);
+	ft_print_c_processes();
+	ft_print_cycle_2die();
+	g_vh.inf_o = 10;
 }

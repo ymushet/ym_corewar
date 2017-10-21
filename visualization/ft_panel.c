@@ -10,5 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../corewar.h"
+#include "../corewar.h"
 
+void	ft_print_c_processes(void)
+{
+	int x;
+
+	x = g_vh.inf_x / 20;
+	wattron(g_vh.info, COLOR_PAIR(INFO_STAND));
+	mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", "Cycle:");
+	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", g_dt.cycle);
+	mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", "Processes:");
+	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", g_dt.count_processes);
+	wattroff(g_vh.info, COLOR_PAIR(INFO_STAND));
+	wrefresh(g_vh.info);
+	g_vh.inf_o++;
+}
+
+void	ft_print_cycle_2die(void)
+{
+	int x;
+
+	x = g_vh.inf_x / 20;
+	wattron(g_vh.info, COLOR_PAIR(INFO_STAND));
+	mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", "CYCLE_TO_DIE:");
+	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", g_dt.cycle2die);
+	mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", "CYCLE_DELTA:");
+	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", CYCLE_DELTA);
+	mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", "NBR_LIVE:");
+	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", g_dt.nbr_live);
+	mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", "MAX_CHECKS:");
+	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", g_dt.max_checks);
+	wattroff(g_vh.info, COLOR_PAIR(INFO_STAND));
+	wrefresh(g_vh.info);
+}

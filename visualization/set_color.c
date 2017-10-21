@@ -42,6 +42,7 @@ void    ft_set_pair()
 	init_pair(B4BOLT, COLOR_GREEN, COLOR_BLACK);
 	init_pair(AVATAR, COLOR_GREEN, COLOR_GREEN);
 	init_pair(AVATARB, COLOR_BLACK, COLOR_BLACK);
+	init_pair(INFO_STAND, COLOR_WHITE, COLOR_BLACK);
 }
 
 int   check_car(int ind)

@@ -99,7 +99,7 @@ void ft_game_cycle(t_process *process)//, unsigned char **map)
 			g_dt.cycle++;
 			g_dt.change_cycle++;
 			print_map();
-			ft_putstr_vis_int((int)g_dt.cycle);
+//			ft_putstr_vis_int((int)g_dt.cycle);
 		}
 		//ft_reset(); //занулять обратно, все что нужно занулять каждый период (например количесство жизней у игроков)
 		if (g_dt.change_cycle == g_dt.cycle2die)

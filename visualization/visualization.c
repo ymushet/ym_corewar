@@ -8,8 +8,6 @@
 //
 # include "../corewar.h"
 
-
-
 void    print_map()
 {
 	int i;
@@ -17,8 +15,8 @@ void    print_map()
 	int y;
 	int mem = 1024 * 4;
 	y = 1;
-	gen_key();
 	i = 0;
+	gen_key();
 	while(y < 66)
 	{
 		x = 2;
@@ -34,9 +32,11 @@ void    print_map()
 		}
 		++y;
 	}
+	ft_print_info();
 	usleep(g_vh.speed);
 	wrefresh(g_vh.gen_win);
 	wrefresh(g_vh.info);
+	wrefresh(g_vh.term);
 	ft_pause_first();
 }
 
@@ -115,8 +115,11 @@ void init_avatar()
 
 void	init_ncurses(void)
 {
+	g_vh.inf_p = 2;
 	g_vh.pause = 1;
-	g_vh.speed = 10000;
+	g_vh.speed = 20000;
+	g_vh.inf_o = 10;
+	g_vh.cycle_p = 50;
 	initscr();
 	start_color();
 	keypad(stdscr, true);
@@ -125,8 +128,6 @@ void	init_ncurses(void)
 	curs_set(0);
 	nodelay(stdscr, true);
 	ft_adaptive();
-	wattron(g_vh.term, COLOR_PAIR(BORDER));
-	wattroff(g_vh.term, COLOR_PAIR(BORDER));
 //	init_avatar();
 	keypad(stdscr, true);
 	g_vh.gen_win = newwin(g_vh.y, g_vh.xg, 0, 0);
@@ -142,3 +143,15 @@ void	init_ncurses(void)
 	wborder(g_vh.term, '.', '.', '.', '.', '.', '.', '.', '.');
 	wattroff(g_vh.term, COLOR_PAIR(BORDER));
 }
+
+
+
+
+//fgp(" ####   ####  ####  ##### #   #   #    #    ####");
+//fgp("#    # #    # #   # #     #   #   #    #    #   #");
+//fgp("#      #    # #   # #      #  #  #     #   #   #");
+//fgp("#      #    # ####  #####  #  #  #     #   ####");
+//fgp("#      #    # #   # #      # # # #     #    #   #");
+//fgp("#      #    # #   # #       #   #      #    #   #");
+//fgp("#    # #    # #   # #       #   #      #   #   #");
+//fgp(" ####   ####  #   # #####   #   #      # #   #");

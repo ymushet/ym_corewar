@@ -39,6 +39,9 @@
 # define B3BOLT 19
 # define B4BOLT 20
 # define CAR_NP 21
+# define INFO_STAND 22
+
+
 
 
 typedef struct  s_visual
@@ -50,6 +53,15 @@ typedef struct  s_visual
 	int     av_pos;
 	int     av_pos_y;
 	int     av_pos_x;
+	
+	int     inf_p;
+	int     inf_y;
+	int     inf_x;
+	
+	int     inf_o;
+	int     info_y;
+	int     info_x;
+	
 	int     width_w;
 	int     step;
 	int     x;
@@ -60,6 +72,7 @@ typedef struct  s_visual
 	int     term_i;
 	int     pause;
 	int     speed;
+	int     cycle_p;
 	char    *color_pair;
 }               t_vis;
 
@@ -79,4 +92,11 @@ void   ft_adaptive();
 void    gen_key(void);
 void   ft_putstr_vis(char *str);
 void    ft_pause_first();
+void   ft_print_info(void);
+void    ft_print_pause(void);
+void    ft_print_start(void);
+void    ft_print_speed(int c);
+void    ft_print_speed_s(int c);
+void    ft_print_c_processes();
+void    ft_print_cycle_2die();
 #endif
