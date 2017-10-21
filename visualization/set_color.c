@@ -91,6 +91,7 @@ void set_color_off_map(int gen, int pl, int bold, int ind)
 	{
 		wattroff(g_vh.gen_win, COLOR_PAIR(pl - 64) | A_BOLD);
 		g_dt.map[2][ind]--;
+		ft_putstr_vis_int((int)g_dt.map[2][ind]);
 	}
 	else if (pl == 48)
 		wattroff(g_vh.gen_win, COLOR_PAIR(START));

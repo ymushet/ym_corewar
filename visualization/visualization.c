@@ -34,9 +34,9 @@ void    print_map()
 		}
 		++y;
 	}
+	usleep(g_vh.speed);
 	wrefresh(g_vh.gen_win);
 	wrefresh(g_vh.info);
-	usleep(g_vh.speed);
 	ft_pause_first();
 }
 
@@ -47,13 +47,20 @@ void fgt(char *str)
 	int x = g_vh.av_pos_x / 2 - 24;
 	while (i <= 48)
 	{
-		wattron(g_vh.avatar, COLOR_PAIR(P4));
+		wattron(g_vh.avatar, COLOR_PAIR(P2) | A_BOLD);
+		mvwprintw(g_vh.avatar, g_vh.av_pos, x + 1, "%c", '|');
+		wattroff(g_vh.avatar, COLOR_PAIR(P2) | A_BOLD);
+		wattron(g_vh.avatar, COLOR_PAIR(P2));
 		mvwprintw(g_vh.avatar, g_vh.av_pos, x, "%c", str[i]);
-		wattroff(g_vh.avatar, COLOR_PAIR(P4));
+		wattroff(g_vh.avatar, COLOR_PAIR(P2));
 		i++;
 		x++;
+		usleep(10000);
+		wrefresh(g_vh.avatar);
 	}
-	usleep(50000);
+	wattron(g_vh.avatar, COLOR_PAIR(P4));
+	mvwprintw(g_vh.avatar, g_vh.av_pos, x, "%c", ' ');
+	wattroff(g_vh.avatar, COLOR_PAIR(P4));
 	wrefresh(g_vh.avatar);
 	g_vh.av_pos++;
 }
@@ -95,15 +102,13 @@ void init_avatar()
 	fgp("#      #    # #   # #       #   #    #####  #   #");
 	fgp("#    # #    # #   # #       #   #   #     # #   #");
 	fgp(" ####   ####  #   # #####   #   #   #     # #   #");
-	fgt("                                                 ");
+	g_vh.av_pos++;
 	fgt("                    INSTRUCTION                  ");
 	fgt("key space..............................play/pause");
 	fgt("key + .............................increase speed");
 	fgt("key + .............................decrease speed");
-	fgt("                                                 ");
-	fgt("                                                 ");
+	g_vh.av_pos+= 2;
 	fgt("              ENTER ANY KEY TO START             ");
-	fgt("                                                 ");
 	getchar();
 	endwin();
 }
@@ -111,7 +116,7 @@ void init_avatar()
 void	init_ncurses(void)
 {
 	g_vh.pause = 1;
-	g_vh.speed = 150000;
+	g_vh.speed = 10000;
 	initscr();
 	start_color();
 	keypad(stdscr, true);
@@ -122,7 +127,7 @@ void	init_ncurses(void)
 	ft_adaptive();
 	wattron(g_vh.term, COLOR_PAIR(BORDER));
 	wattroff(g_vh.term, COLOR_PAIR(BORDER));
-	init_avatar();
+//	init_avatar();
 	keypad(stdscr, true);
 	g_vh.gen_win = newwin(g_vh.y, g_vh.xg, 0, 0);
 	g_vh.info = newwin(g_vh.y - g_vh.yin, g_vh.x - g_vh.xg, 0, g_vh.xg);
