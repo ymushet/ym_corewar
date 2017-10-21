@@ -69,11 +69,11 @@ static void ft_execute_process(t_process *p)//, t_data *data, unsigned char **ma
 {
 	int i;
 
-	i = 0;//ft_is_command(p);
+	i = ft_is_command(p);
 	if(i != 0)
     {
 		p->command = i;
-		if (i == 11)//i != 1 && i != 9 && i != 12 && i != 15)
+		if (i != 1 && i != 9 && i != 12 && i != 15)
 			p->codage_octal =  (int)(g_dt.map[0][ft_increment_index(p)]);
 		ft_execute_command(p, i);
     }
