@@ -117,9 +117,13 @@ void	init_ncurses(void)
 {
 	g_vh.inf_p = 2;
 	g_vh.pause = 1;
+<<<<<<< HEAD
 	g_vh.speed = 20000;
 	g_vh.inf_o = 10;
 	g_vh.cycle_p = 50;
+=======
+	g_vh.speed = 50000;
+>>>>>>> f6f5317706d8765235a40ddb57d2b342939ecea9
 	initscr();
 	start_color();
 	keypad(stdscr, true);

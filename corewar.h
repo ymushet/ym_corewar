@@ -43,4 +43,5 @@ void			ft_take_args(t_process *process, int i, int command);
 int				ft_get_value(int ind);
 void			ft_write_bold(int num, int start, int end);
 void 			ft_write_col(int num, int address);
+void			ft_sort_player(void);
 #endif
