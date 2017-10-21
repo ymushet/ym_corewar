@@ -48,18 +48,18 @@ static int	ft_is_command(t_process *p)
 void	ft_execute_command(t_process *p, int c)
 {
 	//c == 1 ? ft_live(p) : 0;
-	// c == 2 ? ft_ld(p) : 0;
-	// c == 3 ? ft_st(p) : 0;
+	c == 2 ? ft_ld_lld(p, 'n') : 0;
+	c == 3 ? ft_st(p) : 0;
 	// c == 4 ? ft_add(p) : 0;
 	// c == 5 ? ft_sub(p) : 0;
 	// c == 6 ? ft_and(p) : 0;
 	// c == 7 ? ft_or(p): 0;
 	// c == 8 ? ft_xor(p) : 0;
-	// c == 9 ? ft_zjup(p) : 0;
+	c == 9 ? ft_zjump(p) : 0;
 	// c == 10 ? ft_ldi(p) : 0;
 	c == 11 ? ft_sti(p) : 0;
 	// c == 12 ? ft_fork(p) : 0;
-	// c == 13 ? ft_lld(p) : 0;
+	c == 13 ? ft_ld_lld(p, 'l') : 0;
 	// c == 14 ? ft_lldi(p) : 0;
 	// c == 15 ? ft_lfork(p) : 0;
 	// c == 16 ? ft_aff(p) : 0;

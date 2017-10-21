@@ -23,9 +23,9 @@ int		ft_take_ind(int index)
 	return (res);
 }
 
-void	ft_lld(t_process *process, char c)
+void	ft_ld_lld(t_process *process, char c)
 {
-	if (g_dt.map[0][process->mem_addres + 1] == -48)
+	if ((int)g_dt.map[0][process->mem_addres + 1] == -48)
 	{
 		if (c != 'l')
 			process->args[1] %= IDX_MOD;
@@ -37,7 +37,7 @@ void	ft_lld(t_process *process, char c)
 			process->cary = (process->regs[process->args[2]] == 0) ? 1 : 0;
 		}
 	}
-	else if (g_dt.map[0][process->mem_addres + 1] == -112)
+	else if ((int)g_dt.map[0][process->mem_addres + 1] == -112)
 	{
 		ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
 		if (process->args[2] >= 0 && process->args[2] <= REG_NUMBER)

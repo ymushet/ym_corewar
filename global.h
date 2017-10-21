@@ -23,7 +23,7 @@ typedef struct 		    	    s_player
 	unsigned char				*prog_name;   //имя программы
 	unsigned char		        prog_size[4]; //размер программы в одном инте
 	unsigned char				*comment;     //комментарий
-	unsigned int                number;       //номер игрока
+	int                			number;       //номер игрока
 	int                         player_size;  //размер инструкции
 	unsigned char               *instructions;//интсрукции
 	int                         mem_addr;	  //адрес начала инструкции в памяти игры

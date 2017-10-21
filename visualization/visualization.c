@@ -116,7 +116,7 @@ void init_avatar()
 void	init_ncurses(void)
 {
 	g_vh.pause = 1;
-	g_vh.speed = 10000;
+	g_vh.speed = 50000;
 	initscr();
 	start_color();
 	keypad(stdscr, true);
