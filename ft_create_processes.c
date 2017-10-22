@@ -2,28 +2,27 @@
 
 static 			t_process *ft_malloc_process(t_player *player)
 {
-	t_process *new;
+	t_process *p;
 	int i;
 	
 	i = 0;
-	new = malloc(sizeof(t_process));
+	p = malloc(sizeof(t_process));
 	while (i < REG_NUMBER)
-		new->regs[i++] = 0;
+		p->regs[i++] = 0;
 	i = 0;
 	while (i < 4)
-		new->args[i++] = 0;
-	new->regs[0] = player->number * -1;
-	new->cary = 0;
-	new->f = NULL;
-	new->exec_cycle = 0;
-	new->func = NULL;
-	new->number = player->number;
-	new->mem_addres = player->mem_addr;
-	new->alive = 0;
-	new->command = 0;
-	new->codage_octal = 0;
-	new->next = NULL;
-	return (new);
+		p->args[i++] = 0;
+	p->regs[0] = player->number * -1;
+	p->cary = 0;
+	p->f = NULL;
+	p->exec_cycle = 0;
+	p->number = player->number;
+	p->mem_addres = player->mem_addr;
+	p->alive = 0;
+	p->command = 0;
+	p->codage_octal = 0;
+	p->next = NULL;
+	return (p);
 }
 
 static void		ft_add2head_process(t_process **head, t_process *add)

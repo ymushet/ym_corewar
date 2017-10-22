@@ -90,4 +90,6 @@ typedef struct      s_op
 	int             flag_direct_size;
 }                    t_op;
 
+extern t_op						g_tab[];
+
 #endif

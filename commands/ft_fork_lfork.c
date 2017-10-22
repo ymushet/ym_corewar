@@ -19,7 +19,7 @@ t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process)
 	new_p = (t_process *)malloc(sizeof(t_process));
 	new_p->mem_addres = pos;
 	new_p->number = process->number;
-	new_p->func = NULL;
+	new_p->f = NULL;
 	new_p->exec_cycle = -1;
 	new_p->alive = process->alive;
 	new_p->command= 0;
