@@ -57,13 +57,13 @@ static void	ft_execute_command(t_process *p)
 	}
 }
 
-void ft_game_cycle(t_process *process)//, unsigned char **map)
+void ft_game_cycle(t_process *process)
 {
 	t_process *p;
 	
 	g_dt.cycle = 0;
 	g_dt.change_cycle = 0;
-	while (g_dt.cycle2die > 0 || process != NULL) //add if for --dump
+	while (g_dt.cycle2die > 0 || process != NULL)
 	{
 		p = process;
 		while (p != NULL)
@@ -75,11 +75,11 @@ void ft_game_cycle(t_process *process)//, unsigned char **map)
 			print_map();
 		}
 		if (g_dt.change_cycle == g_dt.cycle2die)
-		{ //tнастало время цыкла умереть
+		{
 			ft_change_cycle2die(&g_dt);
 			ft_kill_processes(&process);
 			g_dt.change_cycle = 0;
 		}
 	}
-	ft_putstr_vis("FINISH\n"); /*вывод победителя и его имя!*/
+	ft_putstr_vis("FINISH\n");
 }

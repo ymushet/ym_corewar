@@ -44,4 +44,5 @@ int				ft_get_value(int ind);
 void			ft_write_bold(int num, int start, int end);
 void 			ft_write_col(int num, int address);
 void			ft_sort_player(void);
+t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process);
 #endif

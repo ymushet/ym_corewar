@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/20 14:47:49 by opariy            #+#    #+#             */
-/*   Updated: 2017/10/20 14:47:51 by opariy           ###   ########.fr       */
+/*   Created: 2017/10/22 20:00:51 by opariy            #+#    #+#             */
+/*   Updated: 2017/10/22 20:00:53 by opariy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,17 @@ t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process)
 	return (new_p);
 }
 
-void	ft_lfork_fork(t_process *process, char l)
+void	ft_fork(t_process *p)
 {
 	t_process *new_p;
 
-	ft_increment_index(process);
-	process->args[1] = (short)(g_dt.map[0][ft_increment_index(process)]
-			<< 8) | g_dt.map[0][ft_increment_index(process)];
-	if (l == 'l')
-	{
-		process->args[1] = ft_get_value(process->mem_addres + process->args[1]);
-		new_p = ft_create_car(process->args[1], process->regs[1], process);
-	}
-	else
-	{
-		process->args[1] = ft_get_value((process->mem_addres - 3) + (process->args[1] % IDX_MOD));
-		new_p = ft_create_car(process->args[1], process->number, process);
-	}
+	ft_increment_index(p);
+	p->args[1] = (short)(g_dt.map[0][ft_increment_index(p)]
+			<< 8) | g_dt.map[0][ft_increment_index(p)];
+	p->args[1] = ft_get_value((p->mem_addres - 3) + (p->args[1] % IDX_MOD));
+	new_p = ft_create_car(p->args[1], p->number, p);
 	g_dt.count_processes++;
 	new_p->next = g_dt.process_g;
 	g_dt.process_g = new_p;
-	ft_bzero(process->args, 16);
+	ft_bzero(p->args, 16);
 }

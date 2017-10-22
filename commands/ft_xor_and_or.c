@@ -17,7 +17,7 @@ void		ft_and_or_xor_5(t_process *process, char op, char c)
 	if (c == -12 && process->args[3] >= 0 && process->args[3] <= REG_NUMBER)
 	{
 		process->args[1] = ft_take_ind(process->mem_addres - 7 + process->args[1] % IDX_MOD);
-		process->args[2] = ft_take_ind(process->mem_addres - 7 + process->args[2] % IDX_MOD));
+		process->args[2] = ft_take_ind(process->mem_addres - 7 + process->args[2] % IDX_MOD);
 		(op == 6) ? (process->regs[process->args[3]] = process->args[1] & process->args[2]) : 0;
 		(op == 7) ? (process->regs[process->args[3]] = process->args[1] | process->args[2]) : 0;
 		(op == 8) ? (process->regs[process->args[3]] = process->args[1] ^ process->args[2]) : 0;
@@ -61,7 +61,7 @@ void	ft_and_or_xor_2(t_process *process, char op, char c)
 	else if (c == -44 && process->args[2] >= 0 && process->args[2] <= REG_NUMBER && process->args[3]
 																	  >= 0 && process->args[3] <= REG_NUMBER)
 	{
-		process->args[1] = ft_take_ind(process->mem_addres - 6 + process->args[1] % IDX_MOD));
+		process->args[1] = ft_take_ind(process->mem_addres - 6 + process->args[1] % IDX_MOD);
 		(op == 6) ? (process->regs[process->args[3]] = process->args[1] & process->regs[process->args[2]]) : 0;
 		(op == 7) ? (process->regs[process->args[3]] = process->args[1] | process->regs[process->args[2]]) : 0;
 		(op == 8) ? (process->regs[process->args[3]] = process->args[1] ^ process->regs[process->args[2]]) : 0;
@@ -109,7 +109,7 @@ void	ft_and_or_xor_4(t_process *process, char op, char c)
 	}
 }
 
-void	ft_and_or_xor(t_process *process)
+void	ft_xor_and_or(t_process *process)
 {
 	char operation;
 	char op_code;

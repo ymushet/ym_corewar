@@ -46,29 +46,29 @@ void 			ft_write_col(int num, int address)
 	g_dt.map[1][ft_get_value(address + 3)] = (unsigned char)(num + 64);
 }
 
-void		ft_sti_01(t_process *process, char codage_octal, int i)
+void		ft_sti_01(t_process *p, char codage_octal, int i)
 {
-	if (codage_octal == 88 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
-		process->args[2] >= 0 && process->args[2] <= REG_NUMBER)
+	if (codage_octal == 88 && p->args[1] >= 0 && p->args[1] <= REG_NUMBER &&
+		p->args[2] >= 0 && p->args[2] <= REG_NUMBER)
 	{
-		i += (process->regs[process->args[2]] + process->args[3]) % IDX_MOD;
-		g_dt.map[0][ft_get_value(i)] = (unsigned char)process->regs[process->args[1]] >> 24;
-		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
-		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
-		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-		ft_write_col(process->number, i);
+		i += (p->regs[p->args[2]] + p->args[3]) % IDX_MOD;
+		g_dt.map[0][ft_get_value(i)] = (unsigned char)p->regs[p->args[1]] >> 24;
+		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)p->regs[p->args[1]] >> 16;
+		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)p->regs[p->args[1]] >> 8;
+		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)p->regs[p->args[1]];
+		ft_write_col(p->number, i);
 		ft_write_bold(-50, i, 4);
 	}
-	else if (codage_octal == 84 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
-			 process->args[2] >= 0 && process->args[2] <= REG_NUMBER && process->args[3] >= 0 &&
-			 process->args[3] <= REG_NUMBER)
+	else if (codage_octal == 84 && p->args[1] >= 0 && p->args[1] <= REG_NUMBER &&
+			 p->args[2] >= 0 && p->args[2] <= REG_NUMBER && p->args[3] >= 0 &&
+			 p->args[3] <= REG_NUMBER)
 	{
-		i += (process->regs[process->args[2]] + process->regs[process->args[3]]) % IDX_MOD;
-		g_dt.map[0][ft_get_value(i)] = (unsigned char)process->regs[process->args[1]] >> 24;
-		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
-		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
-		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-		ft_write_col(process->number, i);
+		i += (p->regs[p->args[2]] + p->regs[p->args[3]]) % IDX_MOD;
+		g_dt.map[0][ft_get_value(i)] = (unsigned char)p->regs[p->args[1]] >> 24;
+		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)p->regs[p->args[1]] >> 16;
+		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)p->regs[p->args[1]] >> 8;
+		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)p->regs[p->args[1]];
+		ft_write_col(p->number, i);
 		ft_write_bold(-50, i, 4);
 	}
 }
@@ -128,7 +128,6 @@ void	ft_take_args(t_process *process, int i, int command)
 		printf("arg[%d] is %d\n", i, process->args[i]);
 		i++;
 	}
-
 }
 
 int		ft_get_ind(int value)
@@ -142,29 +141,29 @@ int		ft_get_ind(int value)
 	return (result);
 }
 
-static void		ft_sti_03(t_process *process, char op_code, int i)
+static void		ft_sti_03(t_process *p, char op_code, int i)
 {
-	if (op_code == 120 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER)
+	if (op_code == 120 && p->args[1] >= 0 && p->args[1] <= REG_NUMBER)
 	{
-		process->args[2] = ft_get_ind(i + process->args[2] % IDX_MOD);
-		i += (process->args[2] + process->args[3]) % IDX_MOD;
-		g_dt.map[0][ft_get_value(i)] = (unsigned char)process->regs[process->args[1]] >> 24;
-		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
-		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
-		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-		ft_write_col(process->number, i);
+		p->args[2] = ft_get_ind(i + p->args[2] % IDX_MOD);
+		i += (p->args[2] + p->args[3]) % IDX_MOD;
+		g_dt.map[0][ft_get_value(i)] = (unsigned char)p->regs[p->args[1]] >> 24;
+		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)p->regs[p->args[1]] >> 16;
+		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)p->regs[p->args[1]] >> 8;
+		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)p->regs[p->args[1]];
+		ft_write_col(p->number, i);
 		ft_write_bold(-50, i, 4);
 	}
-	else if (op_code == 116 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
-			 process->args[3] >= 0 && process->args[3] <= REG_NUMBER)
+	else if (op_code == 116 && p->args[1] >= 0 && p->args[1] <= REG_NUMBER &&
+			 p->args[3] >= 0 && p->args[3] <= REG_NUMBER)
 	{
-		process->args[2] = ft_get_ind(i + process->args[2] % IDX_MOD);
-		i += (process->args[2] + process->regs[process->args[3]]) % IDX_MOD;
-		g_dt.map[0][ft_get_value(i)] = (unsigned char)process->regs[process->args[1]] >> 24;
-		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)process->regs[process->args[1]] >> 16;
-		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)process->regs[process->args[1]] >> 8;
-		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)process->regs[process->args[1]];
-		ft_write_col(process->number, i);
+		p->args[2] = ft_get_ind(i + p->args[2] % IDX_MOD);
+		i += (p->args[2] + p->regs[p->args[3]]) % IDX_MOD;
+		g_dt.map[0][ft_get_value(i)] = (unsigned char)p->regs[p->args[1]] >> 24;
+		g_dt.map[0][ft_get_value(i + 1)] = (unsigned char)p->regs[p->args[1]] >> 16;
+		g_dt.map[0][ft_get_value(i + 2)] = (unsigned char)p->regs[p->args[1]] >> 8;
+		g_dt.map[0][ft_get_value(i + 3)] = (unsigned char)p->regs[p->args[1]];
+		ft_write_col(p->number, i);
 		ft_write_bold(-50, i, 4);
 	}
 }
