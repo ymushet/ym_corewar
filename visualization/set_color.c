@@ -53,7 +53,10 @@ int   check_car(int ind)
 	while (p)
 	{
 		if (ind == (int)p->mem_addres)
+		{
+			g_vh.count_processes++;
 			return (1);
+		}
 		p = p->next;
 	}
 	return (0);

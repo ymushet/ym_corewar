@@ -74,6 +74,7 @@ typedef struct  s_visual
 	int     speed;
 	int     cycle_p;
 	char    *color_pair;
+	int     count_processes;
 }               t_vis;
 
 t_vis        g_vh;

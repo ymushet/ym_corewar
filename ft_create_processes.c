@@ -14,6 +14,7 @@ static 			t_process *ft_malloc_process(t_player *player)
 		new->args[i++] = 0;
 	new->regs[0] = player->number * -1;
 	new->cary = 0;
+	new->f = NULL;
 	new->exec_cycle = 0;
 	new->func = NULL;
 	new->number = player->number;

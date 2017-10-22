@@ -1,5 +1,11 @@
-// Created by Maksym Kaliberda on 14.10.17.
+//
+// Created by Maksym Kaliberda on 16.10.17.
+//
 
+
+//
+// Created by Maksym Kaliberda on 14.10.17.
+//
 # include "../corewar.h"
 
 void    print_map()
@@ -7,7 +13,7 @@ void    print_map()
 	int i;
 	int x;
 	int y;
-	g_vh.count_processes = 0;
+	int mem = 1024 * 4;
 	y = 1;
 	i = 0;
 	gen_key();
@@ -111,10 +117,13 @@ void	init_ncurses(void)
 {
 	g_vh.inf_p = 2;
 	g_vh.pause = 1;
-	g_vh.speed = 50000;
+<<<<<<< HEAD
+	g_vh.speed = 20000;
 	g_vh.inf_o = 10;
 	g_vh.cycle_p = 50;
-
+=======
+	g_vh.speed = 50000;
+>>>>>>> f6f5317706d8765235a40ddb57d2b342939ecea9
 	initscr();
 	start_color();
 	keypad(stdscr, true);
@@ -138,3 +147,15 @@ void	init_ncurses(void)
 	wborder(g_vh.term, '.', '.', '.', '.', '.', '.', '.', '.');
 	wattroff(g_vh.term, COLOR_PAIR(BORDER));
 }
+
+
+
+
+//fgp(" ####   ####  ####  ##### #   #   #    #    ####");
+//fgp("#    # #    # #   # #     #   #   #    #    #   #");
+//fgp("#      #    # #   # #      #  #  #     #   #   #");
+//fgp("#      #    # ####  #####  #  #  #     #   ####");
+//fgp("#      #    # #   # #      # # # #     #    #   #");
+//fgp("#      #    # #   # #       #   #      #    #   #");
+//fgp("#    # #    # #   # #       #   #      #   #   #");
+//fgp(" ####   ####  #   # #####   #   #      # #   #");

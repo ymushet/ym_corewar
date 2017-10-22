@@ -8,7 +8,7 @@ typedef struct                  s_process
 	int                         cary;       //кеэри
 	int                         mem_addres; //адрес в памяти(индекс в массиве где стоит каретка)
 	int                         number;     //номер процесса (номер игрока от которого создали процесс)
-	void                        (*func)();  //указатель на функцию (указатель на команду, которая исполняется)
+	void                        (*f)(struct s_process *p);//указатель на функцию (указатель на команду, которая исполняется)
 	int                         exec_cycle; //цикл исполнения (сколько циклов осталось ждать до исполнения команды
 	int                         alive;
 	int							args[4];
@@ -51,4 +51,5 @@ typedef struct                  s_data
 }                               t_data;
 
 t_data g_dt;
+void							(*g_f[16])(struct s_process *p);
 #endif

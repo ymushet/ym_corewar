@@ -25,4 +25,3 @@ void	ft_zjump(t_process *process)
 	else
 		process->mem_addres = ft_get_value(process->mem_addres + 2);
 }
-

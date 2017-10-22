@@ -21,7 +21,7 @@ void	ft_print_c_processes(void)
 	mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", "Cycle:");
 	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", g_dt.cycle);
 	mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", "Processes:");
-	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", g_dt.count_processes);
+	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", g_vh.count_processes / 2);
 	wattroff(g_vh.info, COLOR_PAIR(INFO_STAND));
 	wrefresh(g_vh.info);
 	g_vh.inf_o++;

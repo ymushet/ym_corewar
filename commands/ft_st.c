@@ -12,6 +12,7 @@ void	ft_st01(t_process *process)
 		g_dt.map[0][ft_get_value(process->args[2] + 3)] = (unsigned char)(process->regs[process->args[1]]);
 		ft_write_col(process->number, process->args[2]);
 		ft_write_bold(-50, process->args[2], 4);
+		process->mem_addres = (process->mem_addres + 5) % MEM_SIZE;
 	}
 }
 
@@ -25,8 +26,9 @@ void	ft_st(t_process *process)
 		if (process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
 				process->args[1] >= 0 && process->args[1] <= REG_NUMBER)
 			process->regs[process->args[2]] = process->regs[process->args[1]];
+		process->mem_addres = (process->mem_addres + 5) % MEM_SIZE;
 	}
 	else
-		ft_increment_index(process);
+		process->mem_addres += ft_increment_index(process);
 	ft_bzero(process->args, 16);
 }

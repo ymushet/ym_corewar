@@ -78,16 +78,16 @@ typedef struct					s_header
  	char						comment[COMMENT_LENGTH + 1];
 }								t_header;
 
-typedef struct        s_op
+typedef struct      s_op
 {
 	char            *name;
-	int                count_arg;
-	int                arg[MAX_ARGS_NUMBER];
-	int                op_code;
-	int                cycle;
+	int             count_arg;
+	int             arg[MAX_ARGS_NUMBER];
+	int             op_code;
+	int             cycle;
 	char            *full_name;
-	int                coding_byte;
-	int                flag_direct_size;
+	int             coding_byte;
+	int             flag_direct_size;
 }                    t_op;
 
 #endif
