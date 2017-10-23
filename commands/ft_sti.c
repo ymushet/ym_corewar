@@ -76,7 +76,7 @@ void		ft_sti_01(t_process *p, char codage_octal, int i)
 int 	ft_increment_index(t_process *process)
 {
 	process->mem_addres = (process->mem_addres + 1) % MEM_SIZE;
-		return (process->mem_addres);
+	return (process->mem_addres);
 }
 
 int		ft_take_args_2(t_process *process, int a)
@@ -96,25 +96,19 @@ int		ft_take_args_2(t_process *process, int a)
 
 void	ft_take_args(t_process *process, int i, int command)
 {
-
-	process->mem_addres = ft_increment_index(process);
+	process->mem_addres = ft_increment_index(process);	
 	process->args[0] = command;
 	process->args[1] = g_dt.map[0][process->mem_addres] >> 6;
-
-
-//	printf("\narg 2 was = %d\n", process->args[2]);
-	process->args[2] = g_dt.map[0][process->mem_addres] << 2;
-//	printf("\narg 2 vol 1 = %d\n", process->args[2]);
-	process->args[2] = process->args[2] >> 6;
-//	printf("\narg 2 vol 2  = %d\n", process->args[2]);
-//	printf("\narg = %d\n", process->args[2]);
+	process->args[2] = (g_dt.map[0][process->mem_addres]) << 2;
+	process->args[2] = ((unsigned char)process->args[2]) >> 6;
 	process->args[3] = g_dt.map[0][process->mem_addres] << 4;
-	process->args[3] = process->args[3] >> 6;
-//	printf("arg = %d %d %d %d", process->args[0], process->args[1], process->args[2], process->args[3]);
+	process->args[3] = ((unsigned char)process->args[3]) >> 6;
+	printf("arg[] %d %d %d %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
+	i++;
 	while (i < 4)
 	{
 		if (process->args[i] == REG_CODE)
-			process->args[i] = g_dt.map[0][ft_increment_index(process)];
+			process->args[i] = g_dt.map[0][ft_increment_index(process)] - 1;
 		else if (process->args[i] == DIR_CODE)
 		{
 			if (command == 2 || command == 6 || command == 7 || command == 8 ||
@@ -125,8 +119,10 @@ void	ft_take_args(t_process *process, int i, int command)
 		}
 		else if (process->args[i] == IND_CODE)
 			process->args[i] = ft_take_args_2(process, 2);
+		else
 		i++;
 	}
+	ft_increment_index(process);
 }
 
 int		ft_get_ind(int value)
