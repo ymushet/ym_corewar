@@ -32,12 +32,15 @@ void	ft_ld(t_process *process)
 	{
 		process->args[1] %= IDX_MOD;
 		ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
+//		printf("args were %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
 		if (process->args[2] >= 0 && process->args[2] <= REG_NUMBER)
 		{
-			process->regs[process->args[2]] = (unsigned int)ft_take_ind(process->mem_addres
-																		- 5 + process->args[1]);
+			process->regs[process->args[2]] =
+		(unsigned int)ft_take_ind((process->mem_addres - 5 + process->args[1]) % IDX_MOD);
 			process->cary = (process->regs[process->args[2]] == 0) ? 1 : 0;
 		}
+//		printf("regs are %d, %d, %d, %d\n", process->regs[0], process->regs[1], process->regs[2], process->regs[3]);
+
 	}
 	else if (position == -112)
 	{
