@@ -11,7 +11,10 @@ void    print_map()
 	y = 1;
 	i = 0;
 	gen_key();
-	while(y < 66)
+	int s;
+	s = wgetch(stdscr);
+
+	while(y < 64)
 	{
 		x = 2;
 		while (i < MEM_SIZE)
@@ -20,8 +23,9 @@ void    print_map()
 			mvwprintw(g_vh.gen_win, y, x, "%.2X", (int)g_dt.map[0][i]);
 			set_color_off_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i], i);
 			++i;
-			if (i % 62 == 0)
+			if (i % 65 == 0) {
 				break ;
+			}
 			x += g_vh.step;
 		}
 		++y;
@@ -31,7 +35,9 @@ void    print_map()
 	wrefresh(g_vh.gen_win);
 	wrefresh(g_vh.info);
 	wrefresh(g_vh.term);
-	ft_pause_first();
+	g_vh.iter = g_vh.iter_fl;
+	ft_pause_iter();
+//	ft_pause_first();
 }
 
 
@@ -111,10 +117,10 @@ void	init_ncurses(void)
 {
 	g_vh.inf_p = 2;
 	g_vh.pause = 1;
-	g_vh.speed = 50000;
+	g_vh.speed = 90000;
 	g_vh.inf_o = 10;
 	g_vh.cycle_p = 50;
-
+	g_vh.iter_fl = 1;
 	initscr();
 	start_color();
 	keypad(stdscr, true);

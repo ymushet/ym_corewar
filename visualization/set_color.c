@@ -17,7 +17,7 @@ void   ft_adaptive()
 		g_vh.step = 2;
 	else if (g_vh.x < 200)
 		g_vh.step = 2;
-	g_vh.xg = g_vh.step * 64;
+	g_vh.xg = g_vh.step * 66;
 	g_vh.xin = g_vh.x - g_vh.xg;
 	g_vh.yin = g_vh.y / 2 - g_vh.y / 4;
 }

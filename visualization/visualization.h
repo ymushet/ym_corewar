@@ -75,6 +75,8 @@ typedef struct  s_visual
 	int     cycle_p;
 	char    *color_pair;
 	int     count_processes;
+	int		iter;
+	int		iter_fl;
 }               t_vis;
 
 t_vis        g_vh;
@@ -100,4 +102,5 @@ void    ft_print_speed(int c);
 void    ft_print_speed_s(int c);
 void    ft_print_c_processes();
 void    ft_print_cycle_2die();
+void    ft_pause_iter();
 #endif

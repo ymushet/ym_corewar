@@ -31,6 +31,32 @@ void    ft_pause_first()
 	}
 }
 
+void    ft_pause_iter()
+{
+	int s;
+
+	while (g_vh.iter == 1)
+	{
+		ft_print_pause();
+		g_vh.inf_p = 2;
+		usleep(1);
+		s = wgetch(stdscr);
+		if (s == 119)
+		{
+			ft_print_start();
+			g_vh.inf_p = 2;
+			g_vh.iter = 0;
+		}
+		if (s == 32)
+		{
+			ft_print_start();
+			g_vh.inf_p = 2;
+			g_vh.iter_fl = 0;
+			g_vh.iter = 0;
+		}
+	}
+}
+
 void    ft_pause(int c)
 {
 	int s;
@@ -79,8 +105,12 @@ void    ft_speed(int c)
 void    gen_key()
 {
 	int c;
-	
+
 	c = wgetch(stdscr);
 	ft_pause(c);
 	ft_speed(c);
+	if (c == 32 && g_vh.iter_fl == 1)
+		g_vh.iter_fl = 0;
+	else if (c == 32 && g_vh.iter_fl == 0)
+		g_vh.iter_fl = 1;
 }
