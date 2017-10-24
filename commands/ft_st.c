@@ -3,9 +3,11 @@
 void	ft_st01(t_process *process)
 {
 	ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
+//	printf("Here take args args2: %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
 	if (process->args[1] >= 0 && process->args[1] <= REG_NUMBER)
 	{
 		process->args[2] = process->mem_addres - 5 + (process->args[2] % IDX_MOD);
+//		printf("r4 = %d\n",process->regs[process->args[1]]);
 		g_dt.map[0][ft_get_value(process->args[2])] = (unsigned char)(process->regs[process->args[1]] >> 24);
 		g_dt.map[0][ft_get_value(process->args[2] + 1)] = (unsigned char)(process->regs[process->args[1]] >> 16);
 		g_dt.map[0][ft_get_value(process->args[2] + 2)] = (unsigned char)(process->regs[process->args[1]] >> 8);
@@ -17,6 +19,7 @@ void	ft_st01(t_process *process)
 
 void	ft_st(t_process *process)
 {
+//	printf("we are in st\n");
 	if (g_dt.map[0][process->mem_addres + 1] == 112)
 		ft_st01(process);
 	else if (g_dt.map[0][process->mem_addres + 1] == 80)

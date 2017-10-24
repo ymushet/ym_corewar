@@ -12,17 +12,6 @@
 
 #include "../corewar.h"
 
-//int		ft_take_ind(int index)
-//{
-//	int res;
-//
-//	res = (g_dt.map[0][ft_get_value(index)] << 24) |
-//		  (g_dt.map[0][ft_get_value(index + 1)] << 16) |
-//		  (g_dt.map[0][ft_get_value(index + 2)] << 8) |
-//		  g_dt.map[0][ft_get_value(index + 3)];
-//	return (res);
-//}
-
 void	ft_lld(t_process *process)
 {
 	char	position;

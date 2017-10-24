@@ -14,7 +14,6 @@
 
 void	ft_zjmp(t_process *process)
 {
-//	ft_increment_index(process);
 	if (process->cary == 1)
 	{
 		process->args[1] = (short)(g_dt.map[0][ft_increment_index(process)]

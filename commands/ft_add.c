@@ -16,6 +16,7 @@ void		ft_add(t_process *process)
 {
 	if (g_dt.map[0][process->mem_addres + 1] == 84)
 	{
+		printf("WE ARE  IN ADD\n");
 		ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
 		if (process->args[1] >= 0 && process->args[1] <= REG_NUMBER && process->args[2] >= 0
 			&& process->args[2] <= REG_NUMBER && process->args[3] >= 0 && process->args[3] <=

@@ -21,7 +21,6 @@ void	ft_lfork(t_process *p)
 	ft_increment_index(p);
 	p->args[1] = ft_get_value(p->mem_addres - 3 + p->args[1]);
 	new_p = ft_create_car(p->args[1], p->regs[1], p);
-//	g_dt.count_processes++;
 	new_p->next = g_dt.process_g;
 	g_dt.process_g = new_p;
 	ft_bzero(p->args, 16);
