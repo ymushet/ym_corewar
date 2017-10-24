@@ -73,6 +73,7 @@ void   ft_print_info(void)
 	x = g_vh.info_x / 2;
 	ft_print_speed(1000000 / g_vh.speed);
 	ft_print_c_processes();
+	ft_print_player();
 	ft_print_cycle_2die();
 	g_vh.inf_o = 10;
 }
