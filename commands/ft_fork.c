@@ -12,25 +12,24 @@
 
 #include "../corewar.h"
 
-t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process)
+t_process	*ft_create_car(unsigned int pos, unsigned int num, t_process *p)
 {
 	t_process	*new_p;
 
 	new_p = (t_process *)malloc(sizeof(t_process));
 	new_p->mem_addres = pos;
-	new_p->number = process->number;
+	new_p->number = p->number;
 	new_p->f = NULL;
 	new_p->exec_cycle = -1;
-	new_p->alive = process->alive;
-	new_p->command= 0;
+	new_p->alive = p->alive;
+	new_p->command = 0;
 	new_p->codage_octal = 0;
-	new_p->next = NULL;
 	g_dt.count_processes++;
 	ft_bzero(new_p->regs, 4 * REG_NUMBER);
-	if (process)
+	if (p)
 	{
-		ft_memcpy(new_p->regs, process->regs, 4 * REG_NUMBER);
-		new_p->cary = process->cary;
+		ft_memcpy(new_p->regs, p->regs, 4 * REG_NUMBER);
+		new_p->cary = p->cary;
 		new_p->number = 3;
 	}
 	else
@@ -42,7 +41,7 @@ t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process)
 	return (new_p);
 }
 
-void	ft_fork(t_process *p)
+void		ft_fork(t_process *p)
 {
 	t_process *new_p;
 
@@ -51,7 +50,6 @@ void	ft_fork(t_process *p)
 	ft_increment_index(p);
 	p->args[1] = ft_get_value((p->mem_addres - 3) + (p->args[1] % IDX_MOD));
 	new_p = ft_create_car(p->args[1], p->number, p);
-//	g_dt.count_processes++;
 	new_p->next = g_dt.process_g;
 	g_dt.process_g = new_p;
 	ft_bzero(p->args, 16);

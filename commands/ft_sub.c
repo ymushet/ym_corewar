@@ -15,7 +15,7 @@
 void		ft_sub(t_process *process)
 {
 //	printf("we are in sub\n");
-	if (g_dt.map[0][process->mem_addres + 1] == 84)
+	if (g_dt.map[0][ft_get_value(process->mem_addres + 1)] == 84)
 	{
 		ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
 		if (process->args[1] >= 0 && process->args[1] <= REG_NUMBER && process->args[2] >= 0

@@ -48,7 +48,7 @@ void 			ft_write_col(int num, int address)
 
 int 	ft_increment_index(t_process *process)
 {
-	process->mem_addres = (process->mem_addres + 1) % MEM_SIZE;
+	process->mem_addres = (ft_get_value(process->mem_addres + 1)) % MEM_SIZE;
 	return (process->mem_addres);
 }
 

@@ -20,11 +20,11 @@ void	ft_st01(t_process *process)
 void	ft_st(t_process *process)
 {
 //	printf("we are in st\n");
-	if (g_dt.map[0][process->mem_addres + 1] == 112)
+	if (g_dt.map[0][ft_get_value(process->mem_addres + 1)] == 112)
 		ft_st01(process);
-	else if (g_dt.map[0][process->mem_addres + 1] == 80)
+	else if (g_dt.map[0][ft_get_value(process->mem_addres + 1)] == 80)
 	{
-		ft_take_args(process, 0, g_dt.map[0][process->mem_addres + 1]);
+		ft_take_args(process, 0, g_dt.map[0][ft_get_value(process->mem_addres + 1)]);
 		if (process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
 				process->args[1] >= 0 && process->args[1] <= REG_NUMBER)
 			process->regs[process->args[2]] = process->regs[process->args[1]];

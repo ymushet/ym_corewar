@@ -25,4 +25,3 @@ void	ft_lfork(t_process *p)
 	g_dt.process_g = new_p;
 	ft_bzero(p->args, 16);
 }
-

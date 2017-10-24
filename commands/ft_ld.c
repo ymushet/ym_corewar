@@ -27,7 +27,7 @@ void	ft_ld(t_process *process)
 {
 	char	position;
 
-	position = g_dt.map[0][ft_get_value(process->mem_addres + 1)];
+	position = g_dt.map[0][ft_get_value(ft_get_value(process->mem_addres + 1))];
 	if (position == -48)
 	{
 		process->args[1] %= IDX_MOD;
