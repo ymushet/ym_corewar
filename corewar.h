@@ -24,7 +24,7 @@ void			ft_init_global(void);
 void			ft_error(char *str);
 unsigned char	**ft_create_map(t_player *player, int n);
 t_process		*ft_create_proceses(t_player *player);
-//void			ft_kill_processes(void);
+void			ft_kill_processes(void);
 void			ft_free_player(t_player **player);
 t_player		*ft_read_from_core(int fd, unsigned int n);
 int				ft_read_instructions(int fd, t_player *player);

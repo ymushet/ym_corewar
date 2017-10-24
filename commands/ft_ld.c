@@ -28,6 +28,7 @@ void	ft_ld(t_process *process)
 	char	position;
 
 	position = g_dt.map[0][ft_get_value(process->mem_addres + 1)];
+	ft_increment_index(process); ////////
 	if (position == -48)
 	{
 		process->args[1] %= IDX_MOD;
@@ -41,10 +42,13 @@ void	ft_ld(t_process *process)
 	}
 	else if (position == -112)
 	{
+
 		ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
+		printf("args[0] and args[1] %d, %d\n", process->args[0], process->args[1]);
 		if (process->args[2] >= 0 && process->args[2] <= REG_NUMBER)
 		{
 			process->regs[process->args[2]] = (unsigned int)process->args[1];
+			printf("regs[1] and regs[2] %d, %d\n", process->regs[1], process->regs[2]);
 			process->cary = (process->regs[process->args[2]] == 0) ? 1 : 0;
 		}
 	}

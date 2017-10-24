@@ -49,6 +49,7 @@ t_process		*ft_create_proceses(t_player *player)
 		h = ft_malloc_process(p);
 		ft_add2head_process(&head, h);
 		p = p->next;
+//		g_dt.count_processes++;
 	}
 	return (head);
 }

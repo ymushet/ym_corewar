@@ -20,7 +20,7 @@ void    print_map()
 		while (i < MEM_SIZE)
 		{
 			set_color_on_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i], i);
-			mvwprintw(g_vh.gen_win, y, x, "%.2X", (int)g_dt.map[0][i]);
+			mvwprintw(g_vh.gen_win, y, x, "%.2x", (int)g_dt.map[0][i]);
 			// mvwprintw(g_vh.gen_win, y, x, "%.0d", y);
 			set_color_off_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i], i);
 			++i;

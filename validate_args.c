@@ -88,17 +88,17 @@ void	ft_parse_args(int fd, char **argv, int i, t_player *head)
 	}
 	g_dt.player_g = head;
 	//the lines below are just for prinitng the values
-	t_player *pl;
-	pl = g_dt.player_g;
-	while (pl)
-	{
-		printf("!!!\n");
-		printf("name %s\n", pl->prog_name);
-		printf("num %d\n", pl->number);
-		pl = pl->next;
-
-	}
-	printf("# of players %d\n", g_dt.count_players);
-	printf("dump : %d\n", g_dt.dump);
+//	t_player *pl;
+//	pl = g_dt.player_g;
+//	while (pl)
+//	{
+//		printf("!!!\n");
+//		printf("name %s\n", pl->prog_name);
+//		printf("num %d\n", pl->number);
+//		pl = pl->next;
+//
+//	}
+//	printf("# of players %d\n", g_dt.count_players);
+//	printf("dump : %d\n", g_dt.dump);
 }
 

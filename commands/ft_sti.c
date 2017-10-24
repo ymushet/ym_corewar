@@ -99,7 +99,7 @@ void	ft_take_args(t_process *process, int i, int command)
 //	printf("HERE in take args: command %d\n", command);
 //	printf("in take args: mem address %d\n", process->mem_addres);
 //	printf("in take args: args1 : %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
-//	process->mem_addres = ft_increment_index(process);
+	process->mem_addres = ft_increment_index(process);
 	process->args[0] = command;
 	process->args[1] = g_dt.map[0][process->mem_addres] >> 6;
 	process->args[2] = (g_dt.map[0][process->mem_addres]) << 2;
@@ -112,8 +112,8 @@ void	ft_take_args(t_process *process, int i, int command)
 	{
 		if (process->args[i] == REG_CODE)
 		{
-//			process->args[i] = g_dt.map[0][ft_increment_index(process)] - 1;
-			process->args[i] = g_dt.map[0][ft_increment_index(process)];
+			process->args[i] = g_dt.map[0][ft_increment_index(process)] - 1;
+//			process->args[i] = g_dt.map[0][ft_increment_index(process)];
 
 		}
 		else if (process->args[i] == DIR_CODE)

@@ -25,6 +25,7 @@ t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process)
 	new_p->command= 0;
 	new_p->codage_octal = 0;
 	new_p->next = NULL;
+	g_dt.count_processes++;
 	ft_bzero(new_p->regs, 4 * REG_NUMBER);
 	if (process)
 	{
@@ -50,7 +51,7 @@ void	ft_fork(t_process *p)
 	ft_increment_index(p);
 	p->args[1] = ft_get_value((p->mem_addres - 3) + (p->args[1] % IDX_MOD));
 	new_p = ft_create_car(p->args[1], p->number, p);
-	g_dt.count_processes++;
+//	g_dt.count_processes++;
 	new_p->next = g_dt.process_g;
 	g_dt.process_g = new_p;
 	ft_bzero(p->args, 16);

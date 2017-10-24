@@ -62,23 +62,24 @@ void ft_game_cycle(t_process *process)
 	t_process *p;
 	
 	g_dt.cycle = 0;
-	g_dt.change_cycle = 0;
+	g_dt.change_cycle = 1;
 	while (g_dt.cycle2die > 0 || process != NULL)
 	{
+		ft_putstr_vis_int(g_dt.cycle);
 		p = g_dt.process_g;
 		while (p != NULL)
 		{
 			ft_execute_command(p);
 			p = p->next;
-			g_dt.cycle++;
-			g_dt.change_cycle++;
 		}
+		g_dt.cycle++;
+		g_dt.change_cycle++;
 		print_map();
 		if (g_dt.change_cycle == g_dt.cycle2die)
 		{
-//			ft_change_cycle2die(&g_dt);
-//			ft_kill_processes();
-			g_dt.change_cycle = 0;
+			ft_change_cycle2die(&g_dt);
+			ft_kill_processes();
+			g_dt.change_cycle = 1;
 		}
 	}
 	ft_putstr_vis("FINISH\n");
