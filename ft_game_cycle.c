@@ -36,24 +36,24 @@ static void	ft_execute_command(t_process *p)
 
 	if (p->f == NULL)
 	{
+//		printf("here");
 		command = (int)g_dt.map[0][p->mem_addres] - 1;
 		if (command > 0 && command < 17)
 		{
 			p->f = g_f[command];
-			p->exec_cycle = g_tab[command - 1].cycle;
+			p->exec_cycle = g_tab[command].cycle - 1;
 		}
 		else
 			p->mem_addres = (p->mem_addres + 1) % MEM_SIZE;
 	}
 	else
 	{
+		p->exec_cycle--;
 		if (p->exec_cycle == 0)
 		{
 			p->f(p);
 			p->f = NULL;
 		}
-		else
-			p->exec_cycle--;
 	}
 }
 
@@ -65,19 +65,19 @@ void ft_game_cycle(t_process *process)
 	g_dt.change_cycle = 0;
 	while (g_dt.cycle2die > 0 || process != NULL)
 	{
-		p = process;
+		p = g_dt.process_g;
 		while (p != NULL)
 		{
 			ft_execute_command(p);
 			p = p->next;
 			g_dt.cycle++;
 			g_dt.change_cycle++;
-			print_map();
 		}
+		print_map();
 		if (g_dt.change_cycle == g_dt.cycle2die)
 		{
-			ft_change_cycle2die(&g_dt);
-			ft_kill_processes(&process);
+//			ft_change_cycle2die(&g_dt);
+//			ft_kill_processes();
 			g_dt.change_cycle = 0;
 		}
 	}

@@ -30,7 +30,7 @@ t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process)
 	{
 		ft_memcpy(new_p->regs, process->regs, 4 * REG_NUMBER);
 		new_p->cary = process->cary;
-		new_p->number = (char)new_p->regs[1];
+		new_p->number = 3;
 	}
 	else
 	{
@@ -45,9 +45,9 @@ void	ft_fork(t_process *p)
 {
 	t_process *new_p;
 
-	ft_increment_index(p);
 	p->args[1] = (short)(g_dt.map[0][ft_increment_index(p)]
 			<< 8) | g_dt.map[0][ft_increment_index(p)];
+	ft_increment_index(p);
 	p->args[1] = ft_get_value((p->mem_addres - 3) + (p->args[1] % IDX_MOD));
 	new_p = ft_create_car(p->args[1], p->number, p);
 	g_dt.count_processes++;

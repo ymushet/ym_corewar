@@ -96,9 +96,9 @@ int		ft_take_args_2(t_process *process, int a)
 
 void	ft_take_args(t_process *process, int i, int command)
 {
-	printf("in take args: command %d\n", command);
-	printf("in take args: mem address %d\n", process->mem_addres);
-	printf("in take args: args1 : %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
+//	printf("HERE in take args: command %d\n", command);
+//	printf("in take args: mem address %d\n", process->mem_addres);
+//	printf("in take args: args1 : %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
 //	process->mem_addres = ft_increment_index(process);
 	process->args[0] = command;
 	process->args[1] = g_dt.map[0][process->mem_addres] >> 6;
@@ -106,7 +106,7 @@ void	ft_take_args(t_process *process, int i, int command)
 	process->args[2] = ((unsigned char)process->args[2]) >> 6;
 	process->args[3] = g_dt.map[0][process->mem_addres] << 4;
 	process->args[3] = ((unsigned char)process->args[3]) >> 6;
-	printf("in take args args2: %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
+//	printf("in take args args2: %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
 	i = 1;
 	while (i < 4)
 	{
@@ -132,7 +132,7 @@ void	ft_take_args(t_process *process, int i, int command)
 		}
 		i++;
 	}
-	printf("in take args args3: %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
+//	printf("in take args args3: %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
 
 //	printf("arg[] %d %d %d %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
 	ft_increment_index(process);
@@ -182,7 +182,7 @@ static void		ft_sti_02(t_process *process, char op_code, int i)
 {
 	if (op_code == 104 && process->args[1] >= 0 && process->args[1] <= REG_NUMBER)
 	{
-//		printf("regs %d, %d, %d, %d\n", process->regs[0], process->regs[1], process->regs[2], process->regs[3]);
+		printf("regs %d, %d, %d, %d\n", process->regs[0], process->regs[1], process->regs[2], process->regs[3]);
 		i += (process->args[2] + process->args[3]) % IDX_MOD;
 //		printf("i is %d\n", i);
 		g_dt.map[0][ft_get_value(i)] = (unsigned char)process->regs[process->args[1]] >> 24;
