@@ -27,6 +27,25 @@ void	ft_print_c_processes(void)
 	g_vh.inf_o++;
 }
 
+void    ft_print_player()
+{
+	
+	t_player *p;
+	int x;
+	int i = 0;
+	
+	x = g_vh.inf_x / 20;
+	p = g_dt.player_g;
+	while (p)
+	{
+		wattron(g_vh.info, COLOR_PAIR(p->number));
+		mvwprintw(g_vh.info, g_vh.inf_o += 2, x, "%s", p->prog_name);
+		wattroff(g_vh.info, COLOR_PAIR(p->number));
+		mvwprintw(g_vh.info, g_vh.inf_o, x + 20, "%d", p->n_live);
+		p = p->next;
+	}
+}
+
 void	ft_print_cycle_2die(void)
 {
 	int x;
