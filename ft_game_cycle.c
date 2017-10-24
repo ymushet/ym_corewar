@@ -2,22 +2,30 @@
 
 static void ft_change_cycle2die(t_data *data)
 {
-	if (data->nbr_live >= NBR_LIVE)
+	t_player *p;
+
+	p = g_dt.player_g;
+	if (g_dt.nbr_live >= NBR_LIVE)
 	{
-		data->cycle2die -= CYCLE_DELTA;
-		data->nbr_live = 0;
+		g_dt.cycle2die -= CYCLE_DELTA;
+		g_dt.nbr_live = 0;
 	}
 	else
 	{
-		if (data->max_checks == MAX_CHECKS)
+		if (g_dt.max_checks == MAX_CHECKS)
 		{
-			data->cycle2die -= CYCLE_DELTA;
-			data->max_checks = 0;
+			g_dt.cycle2die -= CYCLE_DELTA;
+			g_dt.max_checks = 0;
 		}
 		else
 		{
-			data->max_checks++;
+			g_dt.max_checks++;
 		}
+	}
+	while(p)
+	{
+		p->live = 0;
+		p = p->next;
 	}
 }
 
@@ -36,7 +44,6 @@ static void	ft_execute_command(t_process *p)
 
 	if (p->f == NULL)
 	{
-//		printf("here");
 		command = (int)g_dt.map[0][p->mem_addres] - 1;
 		if (command > 0 && command < 17)
 		{
@@ -82,5 +89,4 @@ void ft_game_cycle(t_process *process)
 			g_dt.change_cycle = 1;
 		}
 	}
-	ft_putstr_vis("FINISH\n");
 }
