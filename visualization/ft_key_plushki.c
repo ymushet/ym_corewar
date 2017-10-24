@@ -41,7 +41,7 @@ void    ft_pause_iter()
 		g_vh.inf_p = 2;
 		usleep(1);
 		s = wgetch(stdscr);
-		if (s == 119)
+		if (s == 115)
 		{
 			ft_print_start();
 			g_vh.inf_p = 2;
@@ -86,13 +86,13 @@ void    ft_speed(int c)
 	{
 		if(c == 45 && g_vh.speed < 1000000)
 		{
-			g_vh.speed += 400;
+			g_vh.speed += 4000;
 			g_vh.cycle_p--;
 			ft_print_speed(1000000 / g_vh.speed);
 		}
 		else if(c == 43 && g_vh.speed > 400)
 		{
-			g_vh.speed -= 400;
+			g_vh.speed -= 4000;
 			g_vh.cycle_p++;
 			ft_print_speed(1000000 / g_vh.speed);
 		}

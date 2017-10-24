@@ -8,25 +8,26 @@ void    print_map()
 	int x;
 	int y;
 	g_vh.count_processes = 0;
-	y = 1;
+	y = 2;
 	i = 0;
 	gen_key();
 	int s;
 	s = wgetch(stdscr);
 
-	while(y < 64)
+	while(y < 66)
 	{
-		x = 2;
+		x = 3;
 		while (i < MEM_SIZE)
 		{
 			set_color_on_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i], i);
 			mvwprintw(g_vh.gen_win, y, x, "%.2X", (int)g_dt.map[0][i]);
+			// mvwprintw(g_vh.gen_win, y, x, "%.0d", y);
 			set_color_off_map((int)g_dt.map[0][i], (int)g_dt.map[1][i], (int)g_dt.map[2][i], i);
 			++i;
-			if (i % 65 == 0) {
+			if (i % 64 == 0) {
 				break ;
 			}
-			x += g_vh.step;
+			x += 3;
 		}
 		++y;
 	}
@@ -48,6 +49,7 @@ void fgt(char *str)
 	while (i <= 48)
 	{
 		wattron(g_vh.avatar, COLOR_PAIR(P2) | A_BOLD);
+		// mvwprintw(g_vh.avatar, g_vh.av_pos, x + 1, "%c", '|');
 		mvwprintw(g_vh.avatar, g_vh.av_pos, x + 1, "%c", '|');
 		wattroff(g_vh.avatar, COLOR_PAIR(P2) | A_BOLD);
 		wattron(g_vh.avatar, COLOR_PAIR(P2));
@@ -117,7 +119,7 @@ void	init_ncurses(void)
 {
 	g_vh.inf_p = 2;
 	g_vh.pause = 1;
-	g_vh.speed = 90000;
+	g_vh.speed = 25000;
 	g_vh.inf_o = 10;
 	g_vh.cycle_p = 50;
 	g_vh.iter_fl = 1;
