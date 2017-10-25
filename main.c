@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/25 12:44:37 by ymushet           #+#    #+#             */
+/*   Updated: 2017/10/25 12:44:44 by ymushet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "corewar.h"
 
 void		ft_init_f(void)
@@ -35,7 +47,7 @@ int main(int argc, char **argv)
 		g_dt.process_g = ft_create_proceses(g_dt.player_g);
 		init_ncurses();
 		print_map();
-		ft_game_cycle(g_dt.process_g);
+		ft_game_cycle();
 	}
 	return (0);
 }

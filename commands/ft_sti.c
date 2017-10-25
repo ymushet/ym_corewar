@@ -77,22 +77,34 @@ void	ft_take_args(t_process *process, int i, int command)
 	process->args[3] = g_dt.map[0][process->mem_addres] << 4;
 	process->args[3] = ((unsigned char)process->args[3]) >> 6;
 	i = 1;
-	// printf("args : %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
+//	printf("here\n");
+
+//	 printf("args : %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
 	while (i < 4)
 	{
-		if (process->args[i] == REG_CODE)
+		if (process->args[i] == REG_CODE) {
+//			printf("here reg\n");
 			process->args[i] = g_dt.map[0][ft_increment_index(process)] - 1;
+		}
 		else if (process->args[i] == DIR_CODE)
 		{
-			if (command == 2 || command == 6 || command == 7 || command == 8 ||	command == 13)
+			if (command == 2 || command == 6 || command == 7 || command == 8 || command == 13){
+//				printf("here dir\n");
 				process->args[i] = ft_take_args_2(process, 4);
+			}
 			else
-				process->args[i] = ft_take_args_2(process, 2);
+				{
+//					printf("here dir2\n");
+					process->args[i] = ft_take_args_2(process, 2);}
 		}
-		else if (process->args[i] == IND_CODE)
+		else if (process->args[i] == IND_CODE) {
+//			printf("here ind\n");
 			process->args[i] = ft_take_args_2(process, 2);
+		}
 		i++;
 	}
+//	printf("args : %d, %d, %d, %d\n", process->args[0], process->args[1], process->args[2], process->args[3]);
+
 	ft_increment_index(process);
 }
 

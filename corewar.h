@@ -6,7 +6,7 @@
 /*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 19:14:24 by ymushet           #+#    #+#             */
-/*   Updated: 2017/10/19 18:08:59 by ymushet          ###   ########.fr       */
+/*   Updated: 2017/10/25 12:41:26 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int				ft_read_magic(int fd, t_player *player);
 int				ft_read_program_name(int fd, t_player *player);
 int				ft_read_program_size(int fd, t_player *player);
 void			ft_parse_args(int fd, char **argv, int i, t_player *head);
-void			ft_game_cycle(t_process *process);//, unsigned char **map);
+void			ft_game_cycle(void);
 int				check_dump(char *str_next, char *str);
 void			player_add(t_player **head, t_player *new);
 int				ft_isadigit(char *str, char max_dump_or_ply);
@@ -44,5 +44,5 @@ int				ft_get_value(int ind);
 void			ft_write_bold(int num, int start, int end);
 void 			ft_write_col(int num, int address);
 void			ft_sort_player(void);
-t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process);
+t_process		*ft_create_car(unsigned int pos, unsigned int num, t_process *process);
 #endif
