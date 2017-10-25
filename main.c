@@ -3,17 +3,17 @@
 void		ft_init_f(void)
 {
 	g_f[0] = &ft_live;
-	g_f[1] = &ft_ld; //works
-	g_f[2] = &ft_st; //works
-	g_f[3] = &ft_add; //works
-	g_f[4] = &ft_sub; //works
-	g_f[5] = &ft_xor_and_or; //works
-	g_f[6] = &ft_xor_and_or; //works
-	g_f[7] = &ft_xor_and_or; //works
-	g_f[8] = &ft_zjmp; //works
-	g_f[9] = &ft_ldi; //works
-	g_f[10] = &ft_sti; //works
-	g_f[11] = &ft_fork; //works
+	g_f[1] = &ft_ld; //works & tested
+	g_f[2] = &ft_st; //works  & tested
+	g_f[3] = &ft_add; //works  & tested
+	g_f[4] = &ft_sub; //works  & tested
+	g_f[5] = &ft_xor_and_or; //works  & tested
+	g_f[6] = &ft_xor_and_or; //works  & tested
+	g_f[7] = &ft_xor_and_or; //works  & tested
+	g_f[8] = &ft_zjmp; //works  & tested
+	g_f[9] = &ft_ldi; //works & tested
+	g_f[10] = &ft_sti; //works & tested
+	g_f[11] = &ft_fork; //works  & tested
 	g_f[12] = &ft_lld; //works
 	g_f[13] = &ft_lldi; //works
 	g_f[14] = &ft_lfork; //works

@@ -24,7 +24,7 @@ static void ft_change_cycle2die(t_data *data)
 	}
 	while(p)
 	{
-		p->live = 0;
+		p->n_live = 0;
 		p = p->next;
 	}
 }

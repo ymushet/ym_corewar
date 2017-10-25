@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_live.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/25 12:23:03 by ymushet           #+#    #+#             */
+/*   Updated: 2017/10/25 12:26:47 by ymushet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../corewar.h"
 
 static int ft_increment_live(int current, int i)
@@ -8,6 +20,7 @@ static int ft_increment_live(int current, int i)
 	}
 	else if (current + i < MEM_SIZE)
 		return (current + i);
+	return (0);
 }
 
 static int ft_get_nbr(t_process *p)
@@ -16,10 +29,10 @@ static int ft_get_nbr(t_process *p)
 	unsigned char str[4];
 
 	ft_bzero(str, 4);
-	str[0] = g_dt.map[0][ft_increment_index(p)];
-	str[1] = g_dt.map[0][ft_increment_live(p->mem_addres + 1)];
-	str[2] = g_dt.map[0][ft_increment_live(p->mem_addres + 2)];
-	str[3] = g_dt.map[0][ft_increment_live(p->mem_addres + 3)];
+	str[0] = g_dt.map[0][ft_increment_live(p->mem_addres, 1)];
+	str[1] = g_dt.map[0][ft_increment_live(p->mem_addres, 2)];
+	str[2] = g_dt.map[0][ft_increment_live(p->mem_addres, 3)];
+	str[3] = g_dt.map[0][ft_increment_live(p->mem_addres, 4)];
 	j = ft_create_int(str);
 	return (j);
 }
