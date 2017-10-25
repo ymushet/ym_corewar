@@ -84,20 +84,16 @@ void    ft_speed(int c)
 {
 	if (c == 43 || c == 45)
 	{
-		if(c == 45 && g_vh.speed < 1000000)
+		if(c == '-' && g_vh.speed < 640000)
 		{
-			g_vh.speed += 4000;
-			g_vh.cycle_p--;
-			ft_print_speed(1000000 / g_vh.speed);
+			g_vh.speed *= 2;
+			ft_print_speed(g_vh.speed);
 		}
-		else if(c == 43 && g_vh.speed > 400)
+		if(c == '+' && g_vh.speed > 400)
 		{
-			g_vh.speed -= 4000;
-			g_vh.cycle_p++;
-			ft_print_speed(1000000 / g_vh.speed);
+			g_vh.speed /= 2;
+			ft_print_speed(g_vh.speed);
 		}
-		else
-			return ;
 	}
 }
 

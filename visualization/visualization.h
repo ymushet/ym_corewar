@@ -104,4 +104,5 @@ void    ft_print_c_processes();
 void    ft_print_cycle_2die();
 void    ft_pause_iter();
 void    ft_print_player();
+void    final();
 #endif

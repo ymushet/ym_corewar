@@ -90,6 +90,44 @@ void fgp(char *str)
 	g_vh.av_pos++;
 }
 
+void fgtf(char *str)
+{
+	int i = 0;
+	int x = g_vh.av_pos_x / 2 - 15;
+	wattroff(g_vh.avatar, COLOR_PAIR(P2));
+	wattron(g_vh.avatar, COLOR_PAIR(P2));
+	mvwprintw(g_vh.avatar, g_vh.av_pos, x, "%s", str);
+	wattroff(g_vh.avatar, COLOR_PAIR(P2));
+	i++;
+	x++;
+	usleep(10000);
+	wrefresh(g_vh.avatar);
+	g_vh.av_pos++;
+}
+
+void fgpf(char *str)
+{
+	int i = 0;
+	int x = g_vh.av_pos_x / 2 - 15;
+	while (i <= 30)
+	{
+		if (str[i] == 32)
+			wattron(g_vh.avatar, COLOR_PAIR(AVATARB));
+		else
+			wattron(g_vh.avatar, COLOR_PAIR(AVATAR));
+		mvwprintw(g_vh.avatar, g_vh.av_pos, x, "%c", str[i]);
+		if (str[i] == 32)
+			wattroff(g_vh.avatar, COLOR_PAIR(AVATARB));
+		else
+			wattroff(g_vh.avatar, COLOR_PAIR(AVATAR));
+		i++;
+		x++;
+	}
+	usleep(50000);
+	wrefresh(g_vh.avatar);
+	g_vh.av_pos++;
+}
+
 void init_avatar()
 {
 	g_vh.term_i = 1;
@@ -115,13 +153,36 @@ void init_avatar()
 	endwin();
 }
 
+void final()
+{
+	endwin();
+	g_vh.term_i = 1;
+	getmaxyx(stdscr, g_vh.av_pos_y, g_vh.av_pos_x);
+	g_vh.avatar = newwin(g_vh.av_pos_y, g_vh.av_pos_x, 0, 0);
+	g_vh.av_pos = g_vh.av_pos_y / 2 - 7;
+	fgpf("#### ## ###  ####  ###  ###   ");
+	fgpf("##  ##  #    ##    ###  #     ");
+	fgpf("##  ##  #    ##    ###  #     ");
+	fgpf("## ### #     ##    # ## #     ");
+	fgpf("## ### #    ##    ## ####     ");
+	fgpf("##  ##     ##    #   ##       ");
+	fgpf("##  ##     ##    #   ##       ");
+	fgpf("##  ##    ####  ###   #       ");
+	g_vh.av_pos++;
+	fgtf(g_dt.last_live->p);
+	g_vh.av_pos+= 2;
+	fgtf("ENTER ANY KEY TO EXIT");
+	getchar();
+	endwin();
+}
+
+
 void	init_ncurses(void)
 {
 	g_vh.inf_p = 2;
 	g_vh.pause = 1;
-	g_vh.speed = 25000;
+	g_vh.speed = 20000;
 	g_vh.inf_o = 10;
-	g_vh.cycle_p = 50;
 	g_vh.iter_fl = 1;
 	initscr();
 	start_color();
@@ -130,6 +191,7 @@ void	init_ncurses(void)
 	ft_set_pair();
 	curs_set(0);
 	nodelay(stdscr, true);
+	final();
 	ft_adaptive();
 //	init_avatar();
 	keypad(stdscr, true);

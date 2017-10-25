@@ -57,10 +57,26 @@ void    ft_print_speed(int c)
 	int x;
 	
 	x = g_vh.inf_x / 20;
-	wattron(g_vh.info, COLOR_PAIR(INFO_STAND));
-	mvwprintw(g_vh.info, g_vh.inf_o, x, "%s", "cycles per second:");
-	mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%d", c);
-	wattroff(g_vh.info, COLOR_PAIR(INFO_STAND));
+	if (c > 20000)
+	{
+		c = c / 20000;
+		wattron(g_vh.info, COLOR_PAIR(INFO_STAND));
+		mvwprintw(g_vh.info, g_vh.inf_o, x, "%s", "cycles per second:");
+		mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%s", "         ");
+		mvwprintw(g_vh.info, g_vh.inf_o, x + 24, "%s", "x");
+		mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%i", c == 1 ? c : -c);
+		wattroff(g_vh.info, COLOR_PAIR(INFO_STAND));
+	}
+	else
+	{
+		c = 20000 / c;
+		wattron(g_vh.info, COLOR_PAIR(INFO_STAND));
+		mvwprintw(g_vh.info, g_vh.inf_o, x, "%s", "cycles per second:");
+		mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%s", "         ");
+		mvwprintw(g_vh.info, g_vh.inf_o, x + 24, "%s", "x");
+		mvwprintw(g_vh.info, g_vh.inf_o, x + 25, "%i", c);
+		wattroff(g_vh.info, COLOR_PAIR(INFO_STAND));
+	}
 	wrefresh(g_vh.info);
 }
 
@@ -71,7 +87,7 @@ void   ft_print_info(void)
 	getmaxyx(g_vh.info, g_vh.inf_y, g_vh.inf_x);
 	getmaxyx(g_vh.info, g_vh.info_y, g_vh.info_x);
 	x = g_vh.info_x / 2;
-	ft_print_speed(1000000 / g_vh.speed);
+	ft_print_speed(g_vh.speed);
 	ft_print_c_processes();
 	ft_print_player();
 	ft_print_cycle_2die();
