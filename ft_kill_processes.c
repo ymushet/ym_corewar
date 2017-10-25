@@ -19,6 +19,7 @@ void    ft_kill_processes(void)
 		while (h != NULL && h->alive != 0)
 		{
 			prev = h;
+			h->alive = 0;
 			h = h->next;
 		}
 		if (h == NULL)

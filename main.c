@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 		g_dt.map = ft_create_map(g_dt.player_g, g_dt.count_players);
 		g_dt.process_g = ft_create_proceses(g_dt.player_g);
 		init_ncurses();
+		g_dt.last_live = g_dt.player_g;
 		print_map();
 		ft_game_cycle();
 	}

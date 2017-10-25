@@ -30,7 +30,7 @@ t_process	*ft_create_car(unsigned int pos, unsigned int num, t_process *p)
 	{
 		ft_memcpy(new_p->regs, p->regs, 4 * REG_NUMBER);
 		new_p->cary = p->cary;
-		new_p->number = 3;
+		new_p->number = p->number;
 	}
 	else
 	{

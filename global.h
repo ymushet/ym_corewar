@@ -40,7 +40,7 @@ typedef struct                  s_data
 	int                         nbr_live;
 	int                         max_checks;
 	int                         cycle;
-	int                         last_live;
+	t_player                    *last_live;
 	int                         cycle2die;
 	int                         cycle_per_sec;
 	int 						count_processes;

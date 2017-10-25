@@ -45,7 +45,7 @@ static void	ft_execute_command(t_process *p)
 	if (p->f == NULL)
 	{
 		command = (int)g_dt.map[0][p->mem_addres] - 1;
-		if (command > 0 && command < 17)
+		if (command >= 0 && command < 17)
 		{
 			p->f = g_f[command];
 			p->exec_cycle = g_tab[command].cycle - 1;
@@ -89,6 +89,7 @@ void ft_game_cycle(void)
 			g_dt.change_cycle = 1;
 		}
 	}
-	ft_putstr("%FINISH\n");
+		final();
+	// ft_putstr("%FINISH\n");
 	//Карта перестает делать вообще все и стоит на паузе, любая клавиша выходит из игры!
 }

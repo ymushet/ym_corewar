@@ -169,7 +169,7 @@ void final()
 	fgpf("##  ##     ##    #   ##       ");
 	fgpf("##  ##    ####  ###   #       ");
 	g_vh.av_pos++;
-	fgtf(g_dt.last_live->p);
+	fgtf((char *)g_dt.last_live->prog_name);
 	g_vh.av_pos+= 2;
 	fgtf("ENTER ANY KEY TO EXIT");
 	getchar();
@@ -181,7 +181,7 @@ void	init_ncurses(void)
 {
 	g_vh.inf_p = 2;
 	g_vh.pause = 1;
-	g_vh.speed = 20000;
+	g_vh.speed = 1;
 	g_vh.inf_o = 10;
 	g_vh.iter_fl = 1;
 	initscr();
@@ -191,7 +191,7 @@ void	init_ncurses(void)
 	ft_set_pair();
 	curs_set(0);
 	nodelay(stdscr, true);
-	final();
+	// final();
 	ft_adaptive();
 //	init_avatar();
 	keypad(stdscr, true);
