@@ -64,13 +64,13 @@ static void	ft_execute_command(t_process *p)
 	}
 }
 
-void ft_game_cycle(t_process *process)
+void ft_game_cycle(void)
 {
 	t_process *p;
 	
 	g_dt.cycle = 0;
 	g_dt.change_cycle = 1;
-	while (g_dt.cycle2die > 0 || process != NULL)
+	while (g_dt.cycle2die > 0 && g_dt.process_g != NULL)
 	{
 		ft_putstr_vis_int(g_dt.cycle);
 		p = g_dt.process_g;
@@ -89,4 +89,6 @@ void ft_game_cycle(t_process *process)
 			g_dt.change_cycle = 1;
 		}
 	}
+	ft_putstr("%FINISH\n");
+	//Карта перестает делать вообще все и стоит на паузе, любая клавиша выходит из игры!
 }

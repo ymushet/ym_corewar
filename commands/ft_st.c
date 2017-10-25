@@ -30,6 +30,6 @@ void	ft_st(t_process *process)
 			process->regs[process->args[2]] = process->regs[process->args[1]];
 	}
 	else
-		ft_increment_index(process);
+		ft_take_args(process, 0, g_dt.map[0][ft_get_value(process->mem_addres + 1)]);
 	ft_bzero(process->args, 16);
 }

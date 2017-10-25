@@ -20,6 +20,7 @@ int		ft_take_ind(int index)
 		  (g_dt.map[0][ft_get_value(index + 1)] << 16) |
 		  (g_dt.map[0][ft_get_value(index + 2)] << 8) |
 		  g_dt.map[0][ft_get_value(index + 3)];
+//	printf("res %d\n", index);
 	return (res);
 }
 
