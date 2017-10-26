@@ -197,6 +197,10 @@ void		ft_sti(t_process *process)
 	else if (codage_octal == 120 || codage_octal == 116)
 		ft_sti_03(process, codage_octal, i);
 	else
-		process->mem_addres = ft_increment_index(process);
+	{
+		printf("here\n");
+		ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
+		// process->mem_addres = ft_increment_index(process);
+	}
 	ft_bzero(process->args, 16);
 }
