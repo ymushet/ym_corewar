@@ -75,7 +75,6 @@ void			ft_live(t_process *process)
 		ft_putstr(")");
 		ft_putstr(" is alive\n");
 	}
-	while(1);
 	process->alive = 1;
 	g_dt.nbr_live++;
 	ft_increment_index(process);
