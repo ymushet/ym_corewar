@@ -3,28 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 18:41:06 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/03 18:41:07 by opariy           ###   ########.fr       */
+/*   Created: 2016/11/24 13:16:50 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/09 16:31:59 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-	unsigned char	sym;
-
-	if ((c > 255) || (c < 0))
-		return (0);
-	sym = (unsigned char)c;
-	if (!((sym >= 'a') && (sym <= 'z')))
-	{
-		if (!((sym >= 'A') && (sym <= 'Z')))
-		{
-			return (0);
-		}
-	}
-	return (1);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
 }

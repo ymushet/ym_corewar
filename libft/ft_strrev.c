@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_words.c                                   :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/10 13:41:09 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/10 13:41:13 by opariy           ###   ########.fr       */
+/*   Created: 2016/12/12 16:30:53 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/12 16:31:52 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_words(char const *s, char c)
+char	*ft_strrev(char *str)
 {
-	int		i;
-	int		words;
+	size_t index;
+	size_t counter;
+	size_t n;
 
-	i = 0;
-	words = 0;
-	while (s[i] != '\0')
+	counter = ft_strlen(str) - 1;
+	n = ft_strlen(str) / 2;
+	index = 0;
+	while (index < n)
 	{
-		while (s[i] == c && s[i] != '\0')
-			i++;
-		if (s[i] != c && s[i] != '\0')
-		{
-			words++;
-			while (s[i] != c && s[i] != '\0')
-				i++;
-		}
+		ft_swap(&str[index], &str[counter]);
+		index++;
+		counter--;
 	}
-	return (words);
+	return (str);
 }

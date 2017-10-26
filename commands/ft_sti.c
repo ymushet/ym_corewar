@@ -16,6 +16,8 @@ int		ft_get_value(int ind)
 {
 	int result;
 
+		while(1);
+
 	if (ind < 0)
 	{
 		while (ind < 0)

@@ -3,68 +3,80 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/06 14:21:16 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/06 14:21:17 by opariy           ###   ########.fr       */
+/*   Created: 2016/12/17 18:09:59 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/21 19:46:06 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	ft_assign(char **table, const char *str, char c, int words)
+static	char	*ft_nextword(char const *s, char c)
 {
-	int		j;
-	int		i;
-	char	*start;
+	while (*s == c)
+		s++;
+	return ((char *)s);
+}
 
-	j = 0;
-	while (j < words)
+static	size_t	ft_countwords(char const *s, char c)
+{
+	size_t	n;
+	char	*tmp;
+
+	n = 0;
+	tmp = (char *)s;
+	while (*tmp && *(tmp = ft_nextword(tmp, c)))
 	{
-		i = 0;
-		while (*str == c && *str != '\0')
-			str++;
-		start = (char *)str;
-		while (*str != c && *str != '\0')
-			str++;
-		*table = (char *)malloc(sizeof(char) * ((str - start) + 1));
-		while (*start != c && *start != '\0')
-		{
-			(*table)[i] = *start;
-			start++;
-			i++;
-		}
-		(*table)[i] = '\0';
-		table++;
-		j++;
+		while (*tmp && *tmp != c)
+			tmp++;
+		n++;
 	}
-	(*table) = 0;
+	return (n);
+}
+
+static	char	*ft_mystrdup(char const *s, char c)
+{
+	char	*tmp;
+	size_t	index;
+	char	*new;
+
+	index = 0;
+	tmp = (char *)s;
+	while (*tmp && *tmp != c)
+	{
+		index++;
+		tmp++;
+	}
+	if ((new = (char*)malloc(index + 1)) == NULL)
+		return (NULL);
+	new = ft_strncpy(new, tmp - index, index);
+	new[index] = '\0';
+	return (new);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	int		i;
-	int		words;
-	char	**table;
+	char	*tmp;
+	char	**ptr;
+	size_t	n;
+	size_t	i;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
-	words = 0;
-	table = NULL;
-	if (s != NULL)
+	n = ft_countwords(s, c);
+	if (!(ptr = (char**)malloc(sizeof(char*) * (n + 1))))
+		return (NULL);
+	tmp = (char *)s;
+	while (i < n)
 	{
-		while (s[i] != '\0')
-		{
-			while (s[i] == c && s[i] != '\0')
-				i++;
-			if (s[i] != c && s[i] != '\0')
-			{
-				words++;
-				while (s[i] != c && s[i] != '\0')
-					i++;
-			}
-		}
-		if ((table = (char **)malloc(sizeof(char *) * (words + 1))))
-			ft_assign(table, s, c, words);
+		tmp = ft_nextword(tmp, c);
+		ptr[i] = ft_mystrdup(tmp, c);
+		while (*tmp && *tmp != c)
+			tmp++;
+		i++;
 	}
-	return (table);
+	ptr[n] = NULL;
+	return (ptr);
 }

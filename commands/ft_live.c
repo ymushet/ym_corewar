@@ -43,6 +43,20 @@ static t_player	*ft_is_live_arg_valid(t_process *process)
 	return (NULL);
 }
 
+char	*ft_get_player_name(int nbr)
+{
+	t_player *player;
+
+	player = g_dt.player_g;
+	while (player)
+	{
+		if (player->number == nbr)
+			return((char *)player->prog_name);
+		player = player->next;
+	}
+	return (NULL);
+}
+
 void			ft_live(t_process *process)
 {
 	t_player *player;
@@ -52,6 +66,16 @@ void			ft_live(t_process *process)
 		g_dt.last_live = player;
 		player->n_live++;
 	}
+	if (g_dt.visual != 1 && (g_dt.dump == -1))
+	{
+		ft_putstr("A process shows that player ");
+		ft_putnbr(process->number);
+		ft_putstr(" (");
+		ft_putstr(ft_get_player_name(process->number));
+		ft_putstr(")");
+		ft_putstr(" is alive\n");
+	}
+	while(1);
 	process->alive = 1;
 	g_dt.nbr_live++;
 	ft_increment_index(process);

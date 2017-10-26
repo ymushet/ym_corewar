@@ -2,7 +2,7 @@ NAME = corewar
 
 LIB = -L./libft -lft
 
-FLAGS = -Wall -Wextra -Werror -O3
+FLAGS = -Wall -Wextra -Werror
 
 SRC = ft_create_map.c ft_free_player.c ft_kill_processes.c ft_read_magic.c ft_read_instructions.c\
 ft_create_processes.c ft_game_cycle.c ft_read_coment.c ft_read_program_name.c main.c\
@@ -12,9 +12,6 @@ visualization/ft_key_plushki.c visualization/ft_panel.c commands/ft_fork.c  comm
 commands/ft_ld.c commands/ft_lld.c commands/ft_sub.c commands/ft_lldi.c commands/ft_xor_and_or.c commands/ft_aff.c commands/ft_zjump.c commands/ft_ldi.c \
 commands/ft_st.c commands/ft_lfork.c commands/ft_check_codage_octal.c \
 
-		
-# commands/ft_sti.c commands/ft_st.c commands/ft_add_sub.c \
-# commands/ft_zjump.c commands/ft_fork_lfork.c commands/ft_live.c \ commands/ft_ld_lld.c  
 BINS = $(SRC:.c=.o)
 
 all: $(NAME)
