@@ -6,7 +6,7 @@
 /*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 19:46:30 by opariy            #+#    #+#             */
-/*   Updated: 2017/10/27 13:35:03 by ymushet          ###   ########.fr       */
+/*   Updated: 2017/10/27 13:34:35 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int				ft_take_ind(int index)
 {
 	int res;
 
-	res = (g_dt.map[0][ft_get_value(index)] << 24) |
+	res =	(g_dt.map[0][ft_get_value(index)] << 24) |
 			(g_dt.map[0][ft_get_value(index + 1)] << 16) |
 			(g_dt.map[0][ft_get_value(index + 2)] << 8) |
 			g_dt.map[0][ft_get_value(index + 3)];

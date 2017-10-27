@@ -6,7 +6,7 @@
 /*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 18:39:48 by ymushet           #+#    #+#             */
-/*   Updated: 2017/10/27 18:44:12 by ymushet          ###   ########.fr       */
+/*   Updated: 2017/10/27 18:42:21 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ void	ft_st(t_process *process)
 			process->regs[process->args[2]] = process->regs[process->args[1]];
 	}
 	else
-	{
-		ft_take_args(process, 0, g_dt.map[0]
-[ft_get_value(process->mem_addres + 1)]);
-	}
+		ft_take_args(process, 0, g_dt.map[0][ft_get_value(process->mem_addres + 1)]);
 	ft_bzero(process->args, 16);
 }

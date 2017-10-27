@@ -6,7 +6,7 @@
 /*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/22 19:46:00 by opariy            #+#    #+#             */
-/*   Updated: 2017/10/22 19:46:02 by opariy           ###   ########.fr       */
+/*   Updated: 2017/10/27 13:36:22 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_take_ind_short(int index)
 	int res;
 
 	res = (g_dt.map[0][ft_get_value(index + 2)] << 8) |
-		  g_dt.map[0][ft_get_value(index + 3)];
+g_dt.map[0][ft_get_value(index + 3)];
 	return (res);
 }
 

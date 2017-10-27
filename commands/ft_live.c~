@@ -6,16 +6,16 @@
 /*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 12:23:03 by ymushet           #+#    #+#             */
-/*   Updated: 2017/10/27 13:42:18 by ymushet          ###   ########.fr       */
+/*   Updated: 2017/10/25 12:26:47 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../corewar.h"
 
-static int			ft_get_nbr(t_process *p)
+static int		ft_get_nbr(t_process *p)
 {
-	int					j;
-	unsigned char		str[4];
+	int j;
+	unsigned char str[4];
 
 	ft_bzero(str, 4);
 	str[0] = g_dt.map[0][ft_increment_index(p)];
@@ -26,10 +26,10 @@ static int			ft_get_nbr(t_process *p)
 	return (j);
 }
 
-static t_player		*ft_is_live_arg_valid(t_process *process)
+static t_player	*ft_is_live_arg_valid(t_process *process)
 {
-	t_player	*player;
-	int			nbr;
+	t_player *player;
+	int nbr;
 
 	player = g_dt.player_g;
 	nbr = ft_get_nbr(process);
@@ -37,13 +37,13 @@ static t_player		*ft_is_live_arg_valid(t_process *process)
 	while (player)
 	{
 		if (player->number == nbr)
-			return (player);
+			return(player);
 		player = player->next;
 	}
 	return (NULL);
 }
 
-char				*ft_get_player_name(int nbr)
+char	*ft_get_player_name(int nbr)
 {
 	t_player *player;
 
@@ -51,17 +51,17 @@ char				*ft_get_player_name(int nbr)
 	while (player)
 	{
 		if (player->number == nbr)
-			return ((char *)player->prog_name);
+			return((char *)player->prog_name);
 		player = player->next;
 	}
 	return (NULL);
 }
 
-void				ft_live(t_process *process)
+void			ft_live(t_process *process)
 {
 	t_player *player;
 
-	if ((player = ft_is_live_arg_valid(process)) != NULL)
+	if((player = ft_is_live_arg_valid(process)) != NULL)
 	{
 		g_dt.last_live = player;
 		player->n_live++;

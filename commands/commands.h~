@@ -6,7 +6,7 @@
 /*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/19 18:22:32 by ymushet           #+#    #+#             */
-/*   Updated: 2017/10/27 13:34:00 by ymushet          ###   ########.fr       */
+/*   Updated: 2017/10/19 18:22:37 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_lldi(t_process *p);
 void	ft_lfork(t_process *p);
 void 		ft_aff(t_process *process);
 int			ft_take_ind(int index);
-int			ft_take_ind_short(int index);
 //t_process *ft_create_car(unsigned int pos, unsigned int num, t_process *process);
 
 #endif
