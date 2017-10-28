@@ -36,5 +36,7 @@ int		ft_increment_index(t_process *process);
 void	ft_write_col(int num, int address);
 void	ft_write_bold(int num, int start, int end);
 int		ft_get_value(int ind);
+void	ft_take_args(t_process *process, int i, int command);
+void	ft_and_or_xor_5(t_process *p, char op, char c);
 
 #endif

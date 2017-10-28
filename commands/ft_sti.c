@@ -12,51 +12,7 @@
 
 #include "../corewar.h"
 
-int		ft_take_args_2(t_process *process, int a)
-{
-	int res;
-
-	if (a == 2)
-		res = (short)(g_dt.map[0][ft_increment_index(process)] << 8) |
-			  g_dt.map[0][ft_increment_index(process)];
-	else
-		res = ((g_dt.map[0][ft_increment_index(process)] << 24) |
-			  (g_dt.map[0][ft_increment_index(process)] << 16) |
-			  (g_dt.map[0][ft_increment_index(process)] << 8) |
-			  (g_dt.map[0][ft_increment_index(process)]));
-	return (res);
-}
-
-void	ft_take_args(t_process *process, int i, int command)
-{
-	process->mem_addres = ft_increment_index(process);
-	process->args[0] = command;
-	process->args[1] = g_dt.map[0][process->mem_addres] >> 6;
-	process->args[2] = (g_dt.map[0][process->mem_addres]) << 2;
-	process->args[2] = ((unsigned char)process->args[2]) >> 6;
-	process->args[3] = g_dt.map[0][process->mem_addres] << 4;
-	process->args[3] = ((unsigned char)process->args[3]) >> 6;
-	i = 1;
-	while (i < 4)
-	{
-		if (process->args[i] == REG_CODE)
-			process->args[i] = g_dt.map[0][ft_increment_index(process)] - 1;
-		else if (process->args[i] == DIR_CODE)
-		{
-			if (command == 2 || command == 6 || command == 7 || command == 8 || command == 13)
-				process->args[i] = ft_take_args_2(process, 4);
-			else
-				process->args[i] = ft_take_args_2(process, 2);
-		}
-		else if (process->args[i] == IND_CODE) {
-			process->args[i] = ft_take_args_2(process, 2);
-		}
-		i++;
-	}
-	ft_increment_index(process);
-}
-
-void	ft_sti_load(t_process *p, char op_code, int i)
+void			ft_sti_load(t_process *p, char op_code, int i)
 {
 	g_dt.map[0][ft_get_value(i)] = p->regs[p->args[1]] >> 24;
 	g_dt.map[0][ft_get_value(i + 1)] = p->regs[p->args[1]] >> 16;
@@ -75,7 +31,7 @@ static void		ft_sti_03(t_process *p, char op_code, int i)
 		ft_sti_load(p, op_code, i);
 	}
 	else if (op_code == 116 && p->args[1] >= 0 && p->args[1] <= REG_NUMBER &&
-			 p->args[3] >= 0 && p->args[3] <= REG_NUMBER)
+	p->args[3] >= 0 && p->args[3] <= REG_NUMBER)
 	{
 		p->args[2] = ft_get_ind(i + p->args[2] % IDX_MOD);
 		i += (int)(p->args[2] + p->regs[p->args[3]]) % IDX_MOD;
@@ -91,14 +47,14 @@ static void		ft_sti_02(t_process *p, char op_code, int i)
 		ft_sti_load(p, op_code, i);
 	}
 	else if (op_code == 100 && p->args[1] >= 0 && p->args[1] <= REG_NUMBER &&
-			 p->args[3] >= 0 && p->args[3] <= REG_NUMBER)
+		p->args[3] >= 0 && p->args[3] <= REG_NUMBER)
 	{
 		i += (int)(p->args[2] + p->regs[p->args[3]]) % IDX_MOD;
 		ft_sti_load(p, op_code, i);
 	}
 }
 
-void		ft_sti_01(t_process *p, char op_code, int i)
+void			ft_sti_01(t_process *p, char op_code, int i)
 {
 	if (op_code == 88 && p->args[1] >= 0 && p->args[1] <= REG_NUMBER &&
 		p->args[2] >= 0 && p->args[2] <= REG_NUMBER)
@@ -107,18 +63,18 @@ void		ft_sti_01(t_process *p, char op_code, int i)
 		ft_sti_load(p, op_code, i);
 	}
 	else if (op_code == 84 && p->args[1] >= 0 && p->args[1] <= REG_NUMBER &&
-			 p->args[2] >= 0 && p->args[2] <= REG_NUMBER && p->args[3] >= 0 &&
-			 p->args[3] <= REG_NUMBER)
+		p->args[2] >= 0 && p->args[2] <= REG_NUMBER && p->args[3] >= 0 &&
+		p->args[3] <= REG_NUMBER)
 	{
 		i += (int)(p->regs[p->args[2]] + p->regs[p->args[3]]) % IDX_MOD;
 		ft_sti_load(p, op_code, i);
 	}
 }
 
-void		ft_sti(t_process *process)
+void			ft_sti(t_process *process)
 {
-	char 	codage_octal;
-	int 	i;
+	char	codage_octal;
+	int		i;
 
 	i = process->mem_addres;
 	codage_octal = g_dt.map[0][ft_get_value(process->mem_addres + 1)];
