@@ -32,7 +32,7 @@ void	ft_lld(t_process *process)
 		if (process->args[2] >= 0 && process->args[2] <= REG_NUMBER)
 		{
 			process->regs[process->args[2]] =
-	(unsigned int)ft_take_ind_short(process->mem_addres - 5 + process->args[1]);
+					(unsigned int)ft_take_ind_short(process->mem_addres - 5 + process->args[1]);
 			process->cary = (process->regs[process->args[2]] == 0) ? 1 : 0;
 		}
 	}
@@ -46,10 +46,7 @@ void	ft_lld(t_process *process)
 		}
 	}
 	else
-	{
-		// ft_increment_index(process);
 		ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
-		
-	}
+//		ft_increment_index(process);
 	ft_bzero(process->args, 16);
 }

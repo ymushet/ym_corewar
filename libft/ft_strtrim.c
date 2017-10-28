@@ -3,70 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 18:36:32 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/05 18:36:34 by opariy           ###   ########.fr       */
+/*   Created: 2016/11/30 14:11:11 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/20 16:30:25 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	char	*assign(char *str, char const *s, int i, int start)
+char	*ft_strtrim(char const *s)
 {
-	int		len;
+	char	*src;
+	char	*ptr;
+	size_t	begin;
+	size_t	end;
+	size_t	size;
 
-	len = i - start + 1;
-	i = 0;
-	while (i < len)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-static	int		check_front_spaces(char const *s)
-{
-	int		i;
-	int		count;
-
-	i = 0;
-	count = 0;
-	while ((s[i] == ' ') || (s[i] == '\n') || (s[i] == '\t'))
-	{
-		count++;
-		i++;
-	}
-	return (count);
-}
-
-char			*ft_strtrim(char const *s)
-{
-	char	*str;
-	int		count;
-	int		start;
-	int		i;
-
-	str = NULL;
+	src = (char *)s;
 	if (s != NULL)
 	{
-		count = check_front_spaces(s);
-		if (count == (int)ft_strlen(s))
-		{
-			str = ft_strnew(0);
-			return (str);
-		}
-		start = count;
-		i = ft_strlen(s) - 1;
-		while ((s[i] == ' ') || (s[i] == '\n') || (s[i] == '\t'))
-		{
-			count++;
-			i--;
-		}
-		if ((str = malloc(ft_strlen(s) - count + 1)))
-			assign(str, s, i, start);
+		begin = ft_begin(src);
+		if (src[begin] == '\0')
+			return (ft_strnew(0));
+		end = ft_end(src);
+		size = end - begin + 1;
+		if ((ptr = ft_strsub(s, (unsigned int)begin, size)) == NULL)
+			return (0);
+		return (ptr);
 	}
-	return (str);
+	return (NULL);
 }

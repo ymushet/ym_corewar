@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/10 14:01:03 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/10 14:01:07 by opariy           ###   ########.fr       */
+/*   Created: 2016/12/02 18:56:43 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/04 15:00:03 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,25 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	rev[11];
-	int		tempn;
+	long nb;
 
-	tempn = n;
-	if (n == -2147483648)
-		n = -214748364;
-	i = 0;
-	if (tempn < 0)
-		n = -n;
-	while ((n / 10) > 0)
+	nb = (long)n;
+	if (fd >= 0)
 	{
-		rev[i] = n % 10 + '0';
-		i++;
-		n = n / 10;
+		if (nb < 0)
+		{
+			nb = -nb;
+			write(fd, "-", 1);
+		}
+		if (nb >= 10)
+		{
+			ft_putnbr_fd(nb / 10, fd);
+			ft_putnbr_fd(nb % 10, fd);
+		}
+		else
+		{
+			nb = nb + '0';
+			ft_putchar_fd(nb, fd);
+		}
 	}
-	rev[i] = n % 10 + '0';
-	if (tempn < 0)
-		rev[++i] = '-';
-	while (i >= 0)
-		ft_putchar_fd(rev[i--], fd);
-	if (tempn == -2147483648)
-		ft_putchar_fd('8', fd);
 }

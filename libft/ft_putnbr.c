@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/09 13:30:58 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/09 13:31:00 by opariy           ###   ########.fr       */
+/*   Created: 2016/12/01 16:59:11 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/13 15:47:34 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void	ft_putnbr(intmax_t nb)
 {
-	int		i;
-	char	rev[11];
-	int		tempnb;
-
-	tempnb = nb;
-	if (nb == -2147483648)
-		nb = -214748364;
-	i = 0;
-	if (tempnb < 0)
-		nb = -nb;
-	while ((nb / 10) > 0)
+	if (nb < 0)
 	{
-		rev[i] = nb % 10 + '0';
-		i++;
-		nb = nb / 10;
+		nb = -nb;
+		write(1, "-", 1);
 	}
-	rev[i] = nb % 10 + '0';
-	if (tempnb < 0)
-		rev[++i] = '-';
-	while (i >= 0)
-		ft_putchar(rev[i--]);
-	if (tempnb == -2147483648)
-		ft_putchar('8');
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		nb = nb + '0';
+		write(1, &nb, 1);
+	}
 }

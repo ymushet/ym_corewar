@@ -15,7 +15,9 @@
 t_process	*ft_create_car(unsigned int pos, unsigned int num, t_process *p)
 {
 	t_process	*new_p;
+	int i;
 
+	i = 0;
 	new_p = (t_process *)malloc(sizeof(t_process));
 	new_p->mem_addres = pos;
 	new_p->number = p->number;
@@ -25,10 +27,22 @@ t_process	*ft_create_car(unsigned int pos, unsigned int num, t_process *p)
 	new_p->command = 0;
 	new_p->codage_octal = 0;
 	g_dt.count_processes++;
-	ft_bzero(new_p->regs, 4 * REG_NUMBER);
+	//ft_bzero(new_p->regs, 4 * REG_NUMBER);
+	while (i < REG_NUMBER)
+	{
+		new_p->regs[i] = 0;
+		i++;
+	}
+//	if (p == NULL)
 	if (p)
 	{
-		ft_memcpy(new_p->regs, p->regs, 4 * REG_NUMBER);
+		i = 0;
+		//ft_memcpy(new_p->regs, p->regs, 4 * REG_NUMBER);
+		while (i < REG_NUMBER)
+		{
+			new_p->regs[i] = p->regs[i];
+			i++;
+		}
 		new_p->cary = p->cary;
 		new_p->number = p->number;
 	}
@@ -50,7 +64,17 @@ void		ft_fork(t_process *p)
 	ft_increment_index(p);
 	p->args[1] = ft_get_value((p->mem_addres - 3) + (p->args[1] % IDX_MOD));
 	new_p = ft_create_car(p->args[1], p->number, p);
+
+
+
+//	new_p = g_dt.process_g;
+
+
+
+
+
 	new_p->next = g_dt.process_g;
 	g_dt.process_g = new_p;
+//	printf("====prc in frok: %p\n", p);
 	ft_bzero(p->args, 16);
 }

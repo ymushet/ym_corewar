@@ -8,7 +8,10 @@ static 			t_process *ft_malloc_process(t_player *player)
 	i = 0;
 	p = malloc(sizeof(t_process));
 	while (i < REG_NUMBER)
-		p->regs[i++] = 0;
+	{
+		p->regs[i] = 0;
+		i++;
+	}
 	i = 0;
 	while (i < 4)
 		p->args[i++] = 0;

@@ -10,8 +10,8 @@ ft_error.c ft_init_global.c ft_read_from_core.c ft_read_program_size.c validate_
 op.c visualization/visualization.c visualization/set_color.c visualization/ft_print_info.c visualization/ft_putsrt_vis.c\
 visualization/ft_key_plushki.c visualization/ft_panel.c commands/ft_fork.c  commands/ft_live.c  commands/ft_sti.c commands/ft_add.c \
 commands/ft_ld.c commands/ft_lld.c commands/ft_sub.c commands/ft_lldi.c commands/ft_xor_and_or.c commands/ft_aff.c commands/ft_zjump.c commands/ft_ldi.c \
-commands/ft_st.c commands/ft_lfork.c
-		
+commands/ft_st.c commands/ft_lfork.c commands/function_set.c commands/functions.c\
+
 BINS = $(SRC:.c=.o)
 
 all: $(NAME)
@@ -26,5 +26,5 @@ clean:
 	rm -rf $(BINS)
 fclean: clean
 	make -C libft/ fclean
-	rm -f $(NAME)	
+	rm -f $(NAME)
 re: fclean all

@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 15:45:13 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/05 15:45:14 by opariy           ###   ########.fr       */
+/*   Created: 2016/11/28 18:08:11 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/20 16:20:38 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f) (unsigned int, char *))
 {
-	unsigned int	i;
+	size_t index;
 
-	i = 0;
-	if (s != NULL && f != NULL)
+	index = 0;
+	if (s != NULL && *f != NULL)
 	{
-		while (s[i] != '\0')
+		while (s[index] != '\0')
 		{
-			f(i, &s[i]);
-			i++;
+			(*f)(index, &s[index]);
+			index++;
 		}
 	}
 }

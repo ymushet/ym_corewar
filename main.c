@@ -32,6 +32,29 @@ void		ft_init_f(void)
 	g_f[15] = &ft_aff;
 }
 
+
+void		ft_dump(char *addr)
+{
+	int		i;
+
+	i = -1;
+	while (++i < MEM_SIZE)
+	{
+		ft_printf("%.2x ", (unsigned char)addr[i]);
+		if ((i + 1) % 64 == 0)
+			ft_printf("\n");
+	}
+}
+
+void		ft_print_winner(void)
+{
+	ft_putstr("Contestant ");
+	ft_putnbr(g_dt.last_live->number);
+	ft_putstr(", \"");
+	ft_putstr((char *)g_dt.last_live->prog_name);
+	ft_putstr("\", has won !\n");
+}
+
 int main(int argc, char **argv)
 {
 	if (argc < 2)
@@ -45,10 +68,17 @@ int main(int argc, char **argv)
 		ft_sort_player();
 		g_dt.map = ft_create_map(g_dt.player_g, g_dt.count_players);
 		g_dt.process_g = ft_create_proceses(g_dt.player_g);
-		init_ncurses();
 		g_dt.last_live = g_dt.player_g;
-		print_map();
+		if (g_dt.visual == 1)
+		{
+			init_ncurses();
+			print_map();
+		}
 		ft_game_cycle();
 	}
+	if (g_dt.visual == 0 && g_dt.dump > 0)
+		ft_dump((char *)g_dt.map[0]);
+	if (g_dt.visual == 0 && g_dt.dump == -1)
+		ft_print_winner();
 	return (0);
 }

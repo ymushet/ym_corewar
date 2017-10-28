@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 14:45:32 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/03 14:45:50 by opariy           ###   ########.fr       */
+/*   Created: 2016/12/06 22:24:03 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/19 19:07:29 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 char	*ft_strstr(const char *big, const char *little)
 {
-	int i;
-	int c;
+	char *ptrl;
+	char *ptrb;
 
-	i = 0;
-	c = 0;
-	if (ft_strlen(little) == 0)
-		return ((char *)big);
-	while (big[i] != '\0')
+	if (*little == '\0')
+		return ((char*)big);
+	while (*big)
 	{
-		while (big[i + c] == little[c])
+		ptrb = (char*)big;
+		ptrl = (char*)little;
+		while (*ptrb == *ptrl && *ptrb != '\0' && *ptrl != '\0')
 		{
-			c++;
-			if (little[c] == '\0')
-			{
-				return ((char *)(big + i));
-			}
+			ptrl++;
+			ptrb++;
 		}
-		c = 0;
-		i++;
+		if (*ptrl == '\0')
+			return ((char*)big);
+		big++;
 	}
 	return (NULL);
 }

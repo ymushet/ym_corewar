@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 15:22:51 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/05 15:22:55 by opariy           ###   ########.fr       */
+/*   Created: 2016/11/23 17:46:58 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/14 18:57:48 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	ft_strclr(char *s)
 {
-	int	i;
+	int index;
 
-	i = 0;
-	if (s != NULL)
+	if (s == NULL)
+		return ;
+	index = 0;
+	while (s[index] != '\0')
 	{
-		while (s[i] != '\0')
-		{
-			s[i] = '\0';
-			i++;
-		}
+		s[index] = '\0';
+		index++;
 	}
 }

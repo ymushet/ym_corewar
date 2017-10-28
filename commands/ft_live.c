@@ -14,8 +14,8 @@
 
 static int		ft_get_nbr(t_process *p)
 {
-	int j;
-	unsigned char str[4];
+	int				j;
+	unsigned char	str[4];
 
 	ft_bzero(str, 4);
 	str[0] = g_dt.map[0][ft_increment_index(p)];
@@ -28,8 +28,8 @@ static int		ft_get_nbr(t_process *p)
 
 static t_player	*ft_is_live_arg_valid(t_process *process)
 {
-	t_player *player;
-	int nbr;
+	t_player	*player;
+	int			nbr;
 
 	player = g_dt.player_g;
 	nbr = ft_get_nbr(process);
@@ -37,7 +37,7 @@ static t_player	*ft_is_live_arg_valid(t_process *process)
 	while (player)
 	{
 		if (player->number == nbr)
-			return(player);
+			return (player);
 		player = player->next;
 	}
 	return (NULL);
@@ -46,12 +46,17 @@ static t_player	*ft_is_live_arg_valid(t_process *process)
 void			ft_live(t_process *process)
 {
 	t_player *player;
-
-	if((player = ft_is_live_arg_valid(process)) != NULL)
+//	printf("=== here 1\n");
+	if ((player = ft_is_live_arg_valid(process)) != NULL)
 	{
 		g_dt.last_live = player;
-		// printf("player (%s) say live\n", player->prog_name);
 		player->n_live++;
+	}
+	if (g_dt.visual == 0 && g_dt.dump == -1)
+	{
+		ft_putstr("A process shows that player ");
+		ft_putnbr(process->number);
+		ft_putstr(" is alive\n");
 	}
 	process->alive = 1;
 	g_dt.nbr_live++;

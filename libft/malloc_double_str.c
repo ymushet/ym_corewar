@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   malloc_double_str.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:57:59 by opariy            #+#    #+#             */
-/*   Updated: 2016/11/07 17:36:15 by opariy           ###   ########.fr       */
+/*   Created: 2017/06/16 14:36:54 by ymushet           #+#    #+#             */
+/*   Updated: 2017/06/16 14:36:58 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
+char	**ft_malloc_double_str(int x, int y)
 {
-	int i;
+	char	**res;
+	int		i;
 
 	i = 0;
-	while (i < length)
+	res = malloc(sizeof(char*) * (y + 1));
+	res[y] = NULL;
+	while (i < y)
 	{
-		f(tab[i]);
+		res[i] = ft_strnew((size_t)x);
 		i++;
 	}
+	return (res);
 }

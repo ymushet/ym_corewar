@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 15:45:26 by opariy            #+#    #+#             */
-/*   Updated: 2016/12/03 15:45:28 by opariy           ###   ########.fr       */
+/*   Created: 2016/12/07 11:58:45 by ymushet           #+#    #+#             */
+/*   Updated: 2016/12/19 19:16:24 by ymushet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t c;
+	char	*b;
+	char	*l;
+	size_t	k;
 
-	i = 0;
-	c = 0;
-	if (*little == 0)
+	b = (char *)big;
+	l = (char *)little;
+	if (*little == '\0')
 		return ((char *)big);
-	while (big[i] != '\0' && i < len)
+	while (*big && len > 0)
 	{
-		while (big[i + c] == little[c] && i + c < len)
+		b = (char *)big;
+		l = (char *)little;
+		k = len;
+		while (*b == *l && *b != '\0' && *l != '\0' && k > 0)
 		{
-			c++;
-			if (little[c] == '\0')
-			{
-				return ((char *)(big + i));
-			}
+			l++;
+			b++;
+			k--;
 		}
-		c = 0;
-		i++;
+		if (*l == '\0')
+			return ((char *)big);
+		big++;
+		len--;
 	}
 	return (NULL);
 }
