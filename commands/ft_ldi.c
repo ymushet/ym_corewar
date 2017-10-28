@@ -91,7 +91,7 @@ static inline void	ft_ldi_lldi_3(t_process *p, char op, char commmand)
 		p->args[1] += index;
 		p->args[1] = ft_take_ind(p->args[1]);
 		index += (commmand == 10) ? ((p->args[1] + p->regs[p->args[2]]) %
-					IDX_MOD) : (p->args[1] + p->regs[p->args[2]]);
+									 IDX_MOD) : (p->args[1] + p->regs[p->args[2]]);
 		ft_get_data(p, index, commmand);
 	}
 	else if (op == -28 && p->args[3] >= 0 && p->args[3] <= REG_NUMBER)
@@ -125,6 +125,10 @@ void				ft_ldi(t_process *p)
 	else if (position == -44 || position == -28)
 		ft_ldi_lldi_3(p, position, commmand);
 	else
-		ft_increment_index(p);
+	{
+		// ft_increment_index(p);
+		ft_take_args(p, 0, g_dt.map[0][p->mem_addres]);
+
+	}
 	ft_bzero(p->args, 16);
 }

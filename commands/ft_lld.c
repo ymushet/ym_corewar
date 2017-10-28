@@ -17,7 +17,7 @@ int		ft_take_ind_short(int index)
 	int res;
 
 	res = (g_dt.map[0][ft_get_value(index + 2)] << 8) |
-	g_dt.map[0][ft_get_value(index + 3)];
+		  g_dt.map[0][ft_get_value(index + 3)];
 	return (res);
 }
 
@@ -46,6 +46,10 @@ void	ft_lld(t_process *process)
 		}
 	}
 	else
-		ft_increment_index(process);
+	{
+		// ft_increment_index(process);
+		ft_take_args(process, 0, g_dt.map[0][process->mem_addres]);
+		
+	}
 	ft_bzero(process->args, 16);
 }

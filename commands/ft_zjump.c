@@ -19,8 +19,7 @@ void	ft_zjmp(t_process *process)
 		process->args[1] = (short)(g_dt.map[0][ft_increment_index(process)]
 				<< 8) | g_dt.map[0][ft_increment_index(process)];
 		ft_increment_index(process);
-		process->mem_addres = ft_get_value(process->mem_addres - 3 +
-			process->args[1] % IDX_MOD);
+		process->mem_addres = ft_get_value(process->mem_addres - 3 + process->args[1] % IDX_MOD);
 		ft_bzero(process->args, 16);
 	}
 	else
@@ -28,4 +27,6 @@ void	ft_zjmp(t_process *process)
 		ft_increment_index(process);
 		process->mem_addres = ft_get_value(process->mem_addres + 2);
 	}
+
 }
+

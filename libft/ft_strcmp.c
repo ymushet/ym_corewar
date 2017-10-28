@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcomp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 15:38:41 by ymushet           #+#    #+#             */
-/*   Updated: 2016/12/10 21:36:32 by ymushet          ###   ########.fr       */
+/*   Created: 2016/12/03 17:37:26 by opariy            #+#    #+#             */
+/*   Updated: 2016/12/03 17:37:28 by opariy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	index;
+	int i;
 
-	index = 0;
-	while (s1[index] != '\0' && s2[index] != '\0')
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		if (s1[index] != s2[index])
-			return ((unsigned char)s1[index] - (unsigned char)s2[index]);
-		index++;
+		if (s1[i] != s2[i])
+			return ((((unsigned char *)s1)[i]) - (((unsigned char *)s2)[i]));
+		i++;
 	}
-	return ((unsigned char)s1[index] - (unsigned char)s2[index]);
+	return (0);
 }

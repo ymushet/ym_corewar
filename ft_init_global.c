@@ -2,7 +2,7 @@
 
 void	ft_init_global(void)
 {
-	g_dt.dump = -1;
+	g_dt.dump = 0;
 	g_dt.aff = 0;
 	g_dt.visual = 0;
 	g_dt.count_players = 0;
