@@ -52,6 +52,11 @@ int		basic_check(char *str)
 		g_dt.visual = 1;
 		return (1);
 	}
+	else if (ft_strcmp(str, "-a") == 0)
+	{
+		g_dt.aff = 1;
+		return (1);
+	}
 	return (0);
 }
 

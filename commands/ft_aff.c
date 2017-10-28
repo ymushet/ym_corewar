@@ -6,7 +6,7 @@
 /*   By: opariy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/20 14:14:42 by opariy            #+#    #+#             */
-/*   Updated: 2017/10/27 13:03:23 by ymushet          ###   ########.fr       */
+/*   Updated: 2017/10/20 14:14:44 by opariy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_aff(t_process *process)
 	if (g_dt.map[0][process->mem_addres] == 64)
 	{
 		process->args[1] = g_dt.map[0][ft_increment_index(process)];
-		if (process->args[1] >= 0 && process->args[1]
-				<= REG_NUMBER && g_dt.visual != 1)
+		if (process->args[1] >= 0 && process->args[1] <= REG_NUMBER &&
+				g_dt.visual != 1)
 		{
 			ft_putstr("Aff: ");
 			ft_putchar((char)(process->regs[process->args[1] - 1] % 256));

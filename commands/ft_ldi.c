@@ -91,7 +91,7 @@ static inline void	ft_ldi_lldi_3(t_process *p, char op, char commmand)
 		p->args[1] += index;
 		p->args[1] = ft_take_ind(p->args[1]);
 		index += (commmand == 10) ? ((p->args[1] + p->regs[p->args[2]]) %
-									 IDX_MOD) : (p->args[1] + p->regs[p->args[2]]);
+					IDX_MOD) : (p->args[1] + p->regs[p->args[2]]);
 		ft_get_data(p, index, commmand);
 	}
 	else if (op == -28 && p->args[3] >= 0 && p->args[3] <= REG_NUMBER)

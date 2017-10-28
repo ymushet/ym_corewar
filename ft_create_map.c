@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_create_map.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ymushet <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/28 13:24:03 by ymushet           #+#    #+#             */
-/*   Updated: 2017/10/28 13:24:40 by ymushet          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "corewar.h"
 
 static void			ft_copy_com(unsigned char **map, t_player *player, int i)
@@ -21,16 +9,25 @@ static void			ft_copy_com(unsigned char **map, t_player *player, int i)
 	{
 		map[0][i + j] = player->instructions[j];
 		map[1][i + j] = player->number + 64;
+		//map[2] init must be here
 		j++;
 	}
+	// int l = 0;
+	// printf("COPY\n");
+	// while (l < player->player_size)
+	// {
+	// 	printf("%.2X ", map[0][l]);
+	// 	l++;
+	// }
+	// printf("\n");
 }
 
 unsigned char		**ft_create_map(t_player *player, int n)
 {
-	int				i;
-	int				mod;
-	unsigned char	**map;
-	t_player		*p;
+	int i;
+	int mod;
+	unsigned char **map;
+	t_player *p;
 
 	i = 0;
 	p = player;

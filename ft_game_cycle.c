@@ -37,7 +37,6 @@ static void ft_change_cycle2die(t_data *data)
 * если у нас есть функция
 * * осталась ли стоимость, нет - вызываем функцию(указатель на функцию затираем), да - уменьшаем стоимость
 */
-
 static void	ft_execute_command(t_process *p)
 {
 	int command;
@@ -47,6 +46,7 @@ static void	ft_execute_command(t_process *p)
 		command = (int)g_dt.map[0][p->mem_addres] - 1;
 		if (command >= 0 && command < 17)
 		{
+//			printf("the commands is %d", p->command);
 			p->f = g_f[command];
 			p->exec_cycle = g_tab[command].cycle - 1;
 		}
