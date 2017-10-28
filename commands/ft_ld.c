@@ -56,8 +56,9 @@ void	ft_ld(t_process *process)
 	char	position;
 
 
-
+	//printf("LD\n");
 	position = g_dt.map[0][ft_get_value(ft_get_value(process->mem_addres + 1))];
 	ft_help_ld(process, position);
+	printf("LD FINISHED\n");
 //	printf("=== here 2\n");
 }

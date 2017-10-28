@@ -36,10 +36,9 @@ static void	ft_execute_command(t_process *p)
 	if (p->f == NULL)
 	{
 		command = (int)g_dt.map[0][p->mem_addres] - 1;
-		if (command >= 0 && command < 17)
+		if (command >= 0 && command < 16)
 		{
 
-//			printf("=========com is %s\n", g_tab[command].name);
 			p->f = g_f[command];
 			p->exec_cycle = g_tab[command].cycle - 1;
 		}
@@ -58,6 +57,9 @@ static void	ft_execute_command(t_process *p)
 //			ft_putnbr(p->regs[0]);//////////////////////
 //			ft_putstr("\n");
 //			printf("point: %p\n", &p);
+			// ft_putnbr(command);
+			// ft_putstr("\n");
+			//printf("=========com is %s\n", g_tab[command].name);
 			p->f(p);
 			p->f = NULL;
 		}

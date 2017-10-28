@@ -1,4 +1,5 @@
 .name "zork"
 .comment "just a basic living prog"
 
-ld %0,r2
+st r14, -23
+ld %23, r99

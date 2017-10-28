@@ -48,8 +48,11 @@ void	ft_write_col(int num, int address)
 
 int		ft_increment_index(t_process *process)
 {
-	process->mem_addres = (ft_get_value(process->mem_addres + 1)) % MEM_SIZE;
-	return (process->mem_addres);
+	int i;
+	ft_putstr("INCREMENT\n");
+	i = (ft_get_value(process->mem_addres + 1)) % MEM_SIZE;
+	ft_putstr("INCREMETN FINISHED\n");
+	return (i);
 }
 
 int		ft_get_ind(int value)

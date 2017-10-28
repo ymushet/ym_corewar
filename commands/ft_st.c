@@ -33,6 +33,7 @@ void	ft_st01(t_process *p)
 
 void	ft_st(t_process *p)
 {
+	printf("ST START\n");
 	if (g_dt.map[0][ft_get_value(p->mem_addres + 1)] == 112)
 		ft_st01(p);
 	else if (g_dt.map[0][ft_get_value(p->mem_addres + 1)] == 80)
@@ -45,4 +46,5 @@ void	ft_st(t_process *p)
 	else
 		ft_take_args(p, 0, g_dt.map[0][ft_get_value(p->mem_addres + 1)]);
 	ft_bzero(p->args, 16);
+	printf("ST FINISHED\n");
 }

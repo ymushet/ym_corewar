@@ -64,7 +64,6 @@ void	ft_take_args(t_process *process, int i, int com)
 	process->args[3] = g_dt.map[0][process->mem_addres] << 4;
 	process->args[3] = ((unsigned char)process->args[3]) >> 6;
 	i = 1;
-//	while (i < 4)
 	while (i < g_tab[com - 1].count_arg + 1)
 	{
 		if (process->args[i] == REG_CODE)
@@ -81,4 +80,5 @@ void	ft_take_args(t_process *process, int i, int com)
 		i++;
 	}
 	ft_increment_index(process);
+	ft_putstr("args finish\n");
 }
