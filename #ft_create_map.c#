@@ -46,8 +46,7 @@ unsigned char		**ft_create_map(t_player *player, int n)
 	while (p != NULL)
 	{
 		ft_copy_com(map, p, i * mod);
-		p->mem_addr = i * mod;
-		p = p->next;
+		p->mem_addr = i * mod;		p = p->next;
 		i++;
 	}
 	return (map);
